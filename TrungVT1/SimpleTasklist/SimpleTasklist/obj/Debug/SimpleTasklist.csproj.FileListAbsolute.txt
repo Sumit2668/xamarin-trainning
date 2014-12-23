@@ -1,0 +1,13 @@
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\bin\Debug\SimpleTasklist.dll
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\bin\Debug\SimpleTasklist.pdb
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\bin\Debug\SimpleTasklist.dll.mdb
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\bin\Debug\com.xamarin.simpletasklist.apk
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\bin\Debug\com.xamarin.simpletasklist-Signed.apk
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\SimpleTasklist.dll
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\SimpleTasklist.pdb
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\android\bin\com.xamarin.simpletasklist.apk
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\res\values\strings.xml
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\res\drawable\icon.png
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\res\layout\homelayout.xml
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\R.cs.flag
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\uploadflags.txt
