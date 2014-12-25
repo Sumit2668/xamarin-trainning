@@ -1,1 +1,2 @@
 SimpleTasklist.MainActivity;simpletasklist.MainActivity
+SimpleTasklist.NewTaskActivity;simpletasklist.NewTaskActivity

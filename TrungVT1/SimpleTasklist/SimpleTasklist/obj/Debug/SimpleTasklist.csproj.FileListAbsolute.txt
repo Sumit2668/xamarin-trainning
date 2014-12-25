@@ -11,3 +11,4 @@ C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTas
 C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\res\layout\homelayout.xml
 C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\R.cs.flag
 C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\uploadflags.txt
+C:\Users\trung_000\Documents\GitHub\Xamarin\xamarin-trainning\TrungVT1\SimpleTasklist\SimpleTasklist\obj\Debug\res\layout\newtasklayout.xml

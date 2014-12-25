@@ -21,7 +21,12 @@ namespace SimpleTasklist
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-//			Button button = FindViewById<Button> (Resource.Id.myButton);
+			Button button = FindViewById<Button> (Resource.Id.addNewTask);
+
+			button.Click += (sender, e) => {
+				var intent = new Intent (this, typeof(NewTaskActivity));
+				StartActivity (intent);
+			};
 		}
 	}
 }

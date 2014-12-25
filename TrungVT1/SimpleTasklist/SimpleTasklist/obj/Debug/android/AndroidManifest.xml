@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.xamarin.simpletasklist">
   <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="18" />
   <application android:label="SimpleTasklist" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:icon="@drawable/icon" android:label="SimpleTasklist" android:name="simpletasklist.MainActivity" />
+    <activity android:icon="@drawable/icon" android:label="Simple Tasklist" android:name="simpletasklist.MainActivity" />
+    <activity android:label="New Task" android:name="simpletasklist.NewTaskActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.xamarin.simpletasklist.mono.MonoRuntimeProvider.__mono_init__" />
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
@@ -10,7 +11,7 @@
         <category android:name="mono.android.intent.category.SEPPUKU.com.xamarin.simpletasklist" />
       </intent-filter>
     </receiver>
-    <activity android:icon="@drawable/icon" android:label="SimpleTasklist" android:name="com.xamarin.simpletasklist.TrialSplashScreen" android:theme="@style/Mono.Android.Theme.Splash" android:noHistory="true">
+    <activity android:icon="@drawable/icon" android:label="Simple Tasklist" android:name="com.xamarin.simpletasklist.TrialSplashScreen" android:theme="@style/Mono.Android.Theme.Splash" android:noHistory="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
