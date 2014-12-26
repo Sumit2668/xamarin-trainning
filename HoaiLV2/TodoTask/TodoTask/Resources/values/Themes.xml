@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="main_background">#daff7f</color>
+  <color name="ab_background">#ffffff</color>
+  <color name="action_bar_title_color">@color/xam_gray</color>
+  <style name="XamActionBarTheme" parent="@android:style/Theme.Holo.Light">
+    <item name="android:actionBarStyle">@style/XamActionBarStyle</item>
+    <item name="android:windowBackground">@color/main_background</item>
+  </style>
+  <style name="XamActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:titleTextStyle">@style/XamActionBarTitleStyle</item>
+  </style>
+  <style name="XamActionBarTitleStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textSize">17sp</item>
+    <item name="android:textColor">@color/action_bar_title_color</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:background">#5c6e84</item>
+  </style>
+</resources>

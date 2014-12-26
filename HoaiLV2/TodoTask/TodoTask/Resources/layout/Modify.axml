@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:hint="@string/HintTitleEditText" />
+    <EditText
+        android:id="@+id/etContent"
+        android:layout_width="fill_parent"
+        android:layout_height="494.9dp"
+        android:hint="@string/HintContentEditText"
+        android:layout_marginTop="5dip"
+        android:singleLine="false"
+        android:gravity="top" />
+</LinearLayout>
