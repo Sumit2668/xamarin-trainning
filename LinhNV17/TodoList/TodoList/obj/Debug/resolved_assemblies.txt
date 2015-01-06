@@ -1,0 +1,2 @@
+C:\Users\Linh\documents\visual studio 2013\Projects\TodoList\TodoList\bin\Debug\TodoList.dll
+C:\Users\Linh\Desktop\Net45\Newtonsoft.Json.dll
