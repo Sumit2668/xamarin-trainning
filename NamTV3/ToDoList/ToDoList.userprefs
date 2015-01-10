@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ToDoList\MainActivity.cs">
+    <Files>
+      <File FileName="ToDoList\MainActivity.cs" Line="25" Column="25" />
+      <File FileName="ToDoList\ToDoDetailActivity.cs" Line="39" Column="39" />
+      <File FileName="ToDoList\ToDoItem.cs" Line="1" Column="1" />
+      <File FileName="ToDoList\ToDoAdapter.cs" Line="4" Column="4" />
+      <File FileName="ToDoList\ToDoData.cs" Line="30" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="E:\Projects\Xamarin\Practice\ToDoList\ToDoList\ToDoData.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ToDoList MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>
