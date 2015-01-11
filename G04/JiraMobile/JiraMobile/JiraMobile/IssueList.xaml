@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" x:Class="JiraMobile.IssueList" Title="Issues">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
+	<ListView x:Name="allIssueList" ItemsSource="{Binding .}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<Grid VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="75" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="5" />
+						</Grid.ColumnDefinitions>
+						<StackLayout VerticalOptions="Center" Grid.Column="1">
+							<Label Text="{Binding id}" Font="Bold,Medium" />
+							<Label Text="{Binding key}" Font="Small" TextColor="Accent" />
+						</StackLayout>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

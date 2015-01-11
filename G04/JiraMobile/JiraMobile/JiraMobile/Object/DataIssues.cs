@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+
+namespace JiraMobile
+{
+	public static class DataIssues
+	{
+		public static IList<Issue> issueList { get; private set; }
+
+		static DataIssues ()
+		{
+			ObservableCollection<Issue> issueOb = new ObservableCollection<Issue> ();
+			List<String> json = new List<String> ();
+			json.Add ("{\n    \"expand\": \"renderedFields,names,schema,transitions,operations,editmeta,changelog\",\n    \"id\": \"89612\",\n    \"self\": \"https://insight.fsoft.com.vn/jira/rest/api/2/issue/89612\",\n    \"key\": \"F17B2CRED14-66\",\n    \"fields\": {\n        \"assignee\": {\n            \"self\": \"https://insight.fsoft.com.vn/jira/rest/api/2/user?username=ThanhDC3\",\n            \"name\": \"ThanhDC3\",\n            \"emailAddress\": \"ThanhDC3@fsoft.com.vn\",\n            \"avatarUrls\": {\n                \"48x48\": \"https://insight.fsoft.com.vn/jira/secure/useravatar?avatarId=10122\",\n                \"24x24\": \"https://insight.fsoft.com.vn/jira/secure/useravatar?size=small&avatarId=10122\",\n                \"16x16\": \"https://insight.fsoft.com.vn/jira/secure/useravatar?size=xsmall&avatarId=10122\",\n                \"32x32\": \"https://insight.fsoft.com.vn/jira/secure/useravatar?size=medium&avatarId=10122\"\n            },\n            \"displayName\": \"Du Cong Thanh (FSU11.BU13)\",\n            \"active\": true\n        },\n        \"status\": {\n            \"self\": \"https://insight.fsoft.com.vn/jira/rest/api/2/status/10001\",\n            \"description\": \"\",\n            \"iconUrl\": \"https://insight.fsoft.com.vn/jira/images/icons/subtask.gif\",\n            \"name\": \"Done\",\n            \"id\": \"10001\",\n            \"statusCategory\": {\n                \"self\": \"https://insight.fsoft.com.vn/jira/rest/api/2/statuscategory/3\",\n                \"id\": 3,\n                \"key\": \"done\",\n                \"colorName\": \"green\",\n                \"name\": \"Complete\"\n            }\n        }\n    }\n}");
+			json.Add ("{\"expand\":\"renderedFields,names,schema,transitions,operations,editmeta,changelog\",\"id\":\"123200\",\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/issue/123200\",\"key\":\"F17B2CRED14-1001\",\"fields\":{\"assignee\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/user?username=ThanhDC3\",\"name\":\"ThanhDC3\",\"emailAddress\":\"ThanhDC3@fsoft.com.vn\",\"avatarUrls\":{\"48x48\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?avatarId=10122\",\"24x24\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=small&avatarId=10122\",\"16x16\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=xsmall&avatarId=10122\",\"32x32\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=medium&avatarId=10122\"},\"displayName\":\"Du Cong Thanh (FSU11.BU13)\",\"active\":true},\"status\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/status/10001\",\"description\":\"\",\"iconUrl\":\"https://insight.fsoft.com.vn/jira/images/icons/subtask.gif\",\"name\":\"Done\",\"id\":\"10001\",\"statusCategory\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/statuscategory/3\",\"id\":3,\"key\":\"done\",\"colorName\":\"green\",\"name\":\"Complete\"}}}}");
+			json.Add ("{\"expand\":\"renderedFields,names,schema,transitions,operations,editmeta,changelog\",\"id\":\"154679\",\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/issue/154679\",\"key\":\"F17B2CRED14-1611\",\"fields\":{\"assignee\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/user?username=ThanhDC3\",\"name\":\"ThanhDC3\",\"emailAddress\":\"ThanhDC3@fsoft.com.vn\",\"avatarUrls\":{\"48x48\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?avatarId=10122\",\"24x24\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=small&avatarId=10122\",\"16x16\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=xsmall&avatarId=10122\",\"32x32\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=medium&avatarId=10122\"},\"displayName\":\"Du Cong Thanh (FSU11.BU13)\",\"active\":true},\"status\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/status/10001\",\"description\":\"\",\"iconUrl\":\"https://insight.fsoft.com.vn/jira/images/icons/subtask.gif\",\"name\":\"Done\",\"id\":\"10001\",\"statusCategory\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/statuscategory/3\",\"id\":3,\"key\":\"done\",\"colorName\":\"green\",\"name\":\"Complete\"}}}}");
+			json.Add ("{\"expand\":\"renderedFields,names,schema,transitions,operations,editmeta,changelog\",\"id\":\"148685\",\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/issue/148685\",\"key\":\"F17B2CRED14-1330\",\"fields\":{\"assignee\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/user?username=ThanhDC3\",\"name\":\"ThanhDC3\",\"emailAddress\":\"ThanhDC3@fsoft.com.vn\",\"avatarUrls\":{\"48x48\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?avatarId=10122\",\"24x24\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=small&avatarId=10122\",\"16x16\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=xsmall&avatarId=10122\",\"32x32\":\"https://insight.fsoft.com.vn/jira/secure/useravatar?size=medium&avatarId=10122\"},\"displayName\":\"Du Cong Thanh (FSU11.BU13)\",\"active\":true},\"status\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/status/10001\",\"description\":\"\",\"iconUrl\":\"https://insight.fsoft.com.vn/jira/images/icons/subtask.gif\",\"name\":\"Done\",\"id\":\"10001\",\"statusCategory\":{\"self\":\"https://insight.fsoft.com.vn/jira/rest/api/2/statuscategory/3\",\"id\":3,\"key\":\"done\",\"colorName\":\"green\",\"name\":\"Complete\"}}}}");
+
+			for (int i = 0; i < json.Count; i++) {
+				issueOb.Add (JsonConvert.DeserializeObject<Issue> (json[i]));
+			}
+
+			issueList = issueOb;
+		}
+	}
+}
+
