@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using JiraMobile.Pages;
 
 namespace JiraMobile.Droid
 {
@@ -20,7 +21,7 @@ namespace JiraMobile.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(App.GetMainPage());
+            SetPage(new IssueDetail());
         }
     }
 }
