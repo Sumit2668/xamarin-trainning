@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Linq;
 using System.Collections.ObjectModel;
+using JiraMobile.Pages;
 
 namespace JiraMobile
 {	
@@ -35,6 +36,11 @@ namespace JiraMobile
 			}
 
 
+		}
+
+		async void OnItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			await Navigation.PushModalAsync (new IssuesDetail ());
 		}
 	}
 }

@@ -10,7 +10,7 @@
 			<local:PriorityConverter x:Key="priorityCvt" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<ListView x:Name="allIssueList" ItemsSource="{Binding .}">
+	<ListView x:Name="allIssueList" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
