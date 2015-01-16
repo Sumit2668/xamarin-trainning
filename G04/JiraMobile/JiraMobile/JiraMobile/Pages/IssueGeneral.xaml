@@ -1,10 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-					   x:Class="JiraMobile.Pages.IssueGeneral">
-	<StackLayout Orientation="Vertical" xmlns="http://xamarin.com/schemas/2014/forms"
-					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-					   x:Class="JiraMobile.Pages.IssueGeneral">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssueGeneral">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
+	<StackLayout Orientation="Vertical" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssueGeneral">
 		<Label Text="Update 12:21" />
 		<Label Text="JDBC single jar build failing, too many classes" Font="Bold,Medium" />
 		<Label Text="by Jacques Nadeau (4 xxx)" XAlign="End" HorizontalOptions="EndAndExpand" />
@@ -16,4 +15,4 @@
 				and use data-binding in XAML to define a user interface that displays these items." />
 		<Label x:Name="lbTest" />
 	</StackLayout>
-</ContentPage>	
+</ContentPage>
