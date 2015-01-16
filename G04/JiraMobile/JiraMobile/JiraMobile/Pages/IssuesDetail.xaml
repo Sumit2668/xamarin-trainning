@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="JiraMobile.Pages.IssuesDetail"
                        xmlns:local="clr-namespace:JiraMobile.Pages;assembly=JiraMobile"
+                       Title="Detail Issue"
                        >
-    <TabbedPage.Children>
+    <CarouselPage.Children>
         <local:IssueGeneral Title="General" />
         <local:IssuesFields Title="Fields" />
         <ContentPage Title="Comment" />
         <ContentPage Title="Worklog" />
-    </TabbedPage.Children>
-</TabbedPage>
+    </CarouselPage.Children>
+</CarouselPage>
