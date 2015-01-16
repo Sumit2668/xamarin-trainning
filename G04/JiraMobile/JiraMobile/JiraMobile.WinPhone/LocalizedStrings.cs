@@ -1,6 +1,6 @@
-﻿using JiraMobile.WinPhone.Resources;
+﻿using JiraMobile.Pages.WinPhone.Resources;
 
-namespace JiraMobile.WinPhone
+namespace JiraMobile.Pages
 {
     /// <summary>
     /// Provides access to string resources.

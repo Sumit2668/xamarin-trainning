@@ -11,7 +11,7 @@ using Microsoft.Phone.Shell;
 using Xamarin.Forms;
 
 
-namespace JiraMobile.WinPhone
+namespace JiraMobile.Pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -20,7 +20,7 @@ namespace JiraMobile.WinPhone
             InitializeComponent();
 
             Forms.Init();
-            Content = JiraMobile.App.GetMainPage().ConvertPageToUIElement(this);
+            Content = JiraMobile.Pages.App.GetMainPage().ConvertPageToUIElement(this);
         }
     }
 }

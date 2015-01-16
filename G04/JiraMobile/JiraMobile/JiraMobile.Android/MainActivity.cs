@@ -10,7 +10,7 @@ using Android.OS;
 using Xamarin.Forms.Platform.Android;
 using JiraMobile.Pages;
 
-namespace JiraMobile.Droid
+namespace JiraMobile.Pages
 {
     [Activity(Label = "JiraMobile", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : AndroidActivity
@@ -21,7 +21,7 @@ namespace JiraMobile.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(new IssueDetail());
+            SetPage(new IssuesDetail());
         }
     }
 }

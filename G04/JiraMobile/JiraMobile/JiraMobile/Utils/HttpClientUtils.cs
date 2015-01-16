@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JiraMobile.Utils
+namespace JiraMobile.Pages
 {
     public class HttpClientUtils
     {

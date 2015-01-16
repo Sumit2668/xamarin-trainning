@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JiraMobile.WinPhone.Resources
+namespace JiraMobile.Pages
 {
     using System;
 

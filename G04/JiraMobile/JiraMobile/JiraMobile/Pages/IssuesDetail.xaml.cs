@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace JiraMobile.Pages
 {
-    public partial class IssueDetail
+    public partial class IssuesDetail
     {
-        public IssueDetail()
+        public IssuesDetail()
         {
             InitializeComponent();
-            this.ItemsSource = new List<IssueDetail>
-            {
-
-            };
         }
     }
 }

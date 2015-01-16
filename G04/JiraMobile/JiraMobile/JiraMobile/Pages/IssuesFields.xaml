@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns:local="clr-namespace:JiraMobile.Models;assembly=JiraMobile" 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="JiraMobile.Pages.IssuesFields">
+	<ListView x:Name="allFieldsList" ItemsSource="{x:Static local:FieldModel.FieldModelList}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Orientation="Vertical">
+						<Label TextColor="Gray" Text="{Binding Name}" Font="Small" />
+						<Label Font="Medium" />
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>	

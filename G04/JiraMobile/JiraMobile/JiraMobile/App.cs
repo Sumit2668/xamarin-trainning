@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace JiraMobile
+namespace JiraMobile.Pages
 {
     public class App
     {

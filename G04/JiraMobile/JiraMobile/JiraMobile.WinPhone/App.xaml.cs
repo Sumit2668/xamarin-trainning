@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using JiraMobile.WinPhone.Resources;
+using JiraMobile.Pages.WinPhone.Resources;
 
-namespace JiraMobile.WinPhone
+namespace JiraMobile.Pages
 {
     public partial class App : Application
     {
