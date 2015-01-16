@@ -3,12 +3,13 @@
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
 	</ContentPage.Padding>
-	<StackLayout Orientation="Vertical" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssueGeneral">
+	<ActivityIndicator Color="Red" x:Name="processBar" IsRunning="true" />
+	<StackLayout x:Name="viewContent" IsVisible="false" Orientation="Vertical" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssueGeneral">
 		<Label Text="Update 12:21" />
 		<Label Text="JDBC single jar build failing, too many classes" Font="Bold,Medium" />
 		<Label Text="by Jacques Nadeau (4 xxx)" XAlign="End" HorizontalOptions="EndAndExpand" />
 		<Label x:Name="lbContent"
-			Text="The Xamarin.Forms TabbedPage allows easy 
+			Text="The Xamarin.Forms TabbedPage allows easy
 				navigation among several similar pages. The actual implementation of TabbedPage is different on the iPhone, 
 				Android, and Windows Phone platform. As this sample program demonstrates, 
 				it is easiest to set the ItemsSource property of TabbedPage to a collection of data items, 
