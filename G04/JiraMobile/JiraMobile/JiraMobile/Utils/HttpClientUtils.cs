@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace JiraMobile.Pages
 {
@@ -12,7 +13,7 @@ namespace JiraMobile.Pages
     {
 		// TODO : Mock data from Login screen
 		private string username = "HoaiLV2";
-		private string password = "XXXXXXX";
+		private string password = "XXXXX";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
@@ -27,17 +28,20 @@ namespace JiraMobile.Pages
 
 		public HttpClientUtils(string username, string password, IProcessBarCallBack _IProcessBarCallBack)
 		{
-			this.username = username;
-			this.password = password;
+			// TODO : uncomment
+//			this.username = username;
+//			this.password = password;
 			this._IProcessBarCallBack = _IProcessBarCallBack;
+			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (this.username + ":" + this.password));
 		}
 
-		public string getAllIssues()
+		public async Task<RootIssueDetail> getIssuesById(string id)
 		{
-			return executeApi ("rest/api/2/search?jql=assignee=hoailv2").ToString();
+			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/537055?fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype");
+			return json;
 		}
 
-		public async Task<string> executeApi(string url)
+		public async Task<T> executeApi<T>(string url)
 		{
 			// display processbar
 			this._IProcessBarCallBack.Show ();
@@ -52,11 +56,12 @@ namespace JiraMobile.Pages
 			request.Headers.Add ("User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0");
 
 			HttpClient client = new HttpClient ();
-			var response = await client.SendAsync (request).Result.Content.ReadAsStringAsync ();
+			var response = await client.SendAsync (request);
+			var jsonResponse = await response.Content.ReadAsStringAsync ();
 
 			this._IProcessBarCallBack.Hide ();
 
-			return response;
+			return JsonConvert.DeserializeObject<T> (jsonResponse);
 		}
 
 		public interface IProcessBarCallBack

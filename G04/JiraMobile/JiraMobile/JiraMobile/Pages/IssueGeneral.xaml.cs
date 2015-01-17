@@ -9,7 +9,6 @@ namespace JiraMobile.Pages
 		public IssueGeneral ()
 		{
 			InitializeComponent ();
-			//lbTest.Text = new HttpClientUtils ().getAllIssues ();
 		}
 
 //		public void Show()

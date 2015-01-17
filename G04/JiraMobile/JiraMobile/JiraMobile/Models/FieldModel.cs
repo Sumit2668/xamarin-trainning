@@ -34,27 +34,29 @@ namespace JiraMobile.Models
 					Name = "Resolution"
 				},
 				new FieldIssues {
-					Name = "Affects Version/s"
-				},
-				new FieldIssues {
 					Name = "Environment"
 				},
 				new FieldIssues {
 					Name = "Issue Type"
 				},
 				new FieldIssues {
-					Name = "Epic Link"
-				},
-				new FieldIssues {
 					Name = "Priority"
-				},
-				new FieldIssues {
-					Name = "Sprint"
 				}
 			};
 		}
 		public static IList<FieldIssues> FieldModelList { get; private set; }
 
+		static FieldIssues GetByName(string name)
+		{
+			foreach (var model in FieldModelList) {
+				if (model.Name.Equals (name)) {
+
+					return model;
+				}
+			}
+
+			return null;
+		}
 	}
 }
 
