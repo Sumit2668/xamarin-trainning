@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" x:Class="JiraMobile.IssueList" Title="Issues">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:AvatarConverter x:Key="avtResourceCvt" />
+			<local:DateConverter x:Key="dateCvt" />
+			<local:PriorityConverter x:Key="priorityCvt" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ListView x:Name="allIssueList" ItemsSource="{Binding .}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Orientation="Vertical">
+						
+						<StackLayout Orientation="Horizontal">
+							<Label Text="{Binding key}" Font="Bold,Medium"/>
+							<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Bold,Medium" XAlign="End" HorizontalOptions="EndAndExpand"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							
+							<Label Text="{Binding fields.summary}" Font="Small" TextColor="Accent" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+						<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}"/>
+							<Label Text="{Binding fields.assignee.name}" Font="Bold,Medium" />
+							<Image x:Name="imgPriority" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}"/>
+							<Label Text="{Binding fields.priority.name}" Font="Medium" XAlign="End" HorizontalOptions="EndAndExpand"/>
+						</StackLayout>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

@@ -48,6 +48,14 @@
     <Compile Include="Pages\IssueGeneral.xaml.cs">
       <DependentUpon>IssueGeneral.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IssueList.xaml.cs">
+      <DependentUpon>IssueList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Object\DataIssues.cs" />
+    <Compile Include="Object\Issue.cs" />
+    <Compile Include="Converter\AvatarConverter.cs" />
+    <Compile Include="Converter\DateConverter.cs" />
+    <Compile Include="Converter\PriorityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -64,6 +72,9 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.1.0.6186\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -103,4 +114,20 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <EmbeddedResource Include="IssueList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\useravatar.png" />
+    <EmbeddedResource Include="Images\blocker.png" />
+    <EmbeddedResource Include="Images\critical.png" />
+    <EmbeddedResource Include="Images\major.png" />
+    <EmbeddedResource Include="Images\minor.png" />
+    <EmbeddedResource Include="Images\trivial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Object\" />
+    <Folder Include="Converter\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
 </Project>

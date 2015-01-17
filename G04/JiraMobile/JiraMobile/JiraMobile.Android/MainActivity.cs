@@ -21,7 +21,7 @@ namespace JiraMobile.Pages
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(new IssuesDetail());
+			SetPage(App.GetMainPage());
         }
     }
 }
