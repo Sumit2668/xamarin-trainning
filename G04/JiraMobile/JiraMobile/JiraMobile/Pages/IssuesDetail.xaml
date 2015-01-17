@@ -7,7 +7,7 @@
     <TabbedPage.Children>
         
         <local:IssueGeneral Title="General" />
-        <!--<local:IssuesFields Title="Fields" />-->
+        <local:IssuesFields Title="Fields" />
         <ContentPage Title="Comment" />
         <ContentPage Title="Worklog" />
     </TabbedPage.Children>

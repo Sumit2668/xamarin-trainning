@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-	xmlns:local="clr-namespace:JiraMobile.Models;assembly=JiraMobile" 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="JiraMobile.Pages.IssuesFields">
+<ContentPage xmlns:local="clr-namespace:JiraMobile.Models;assembly=JiraMobile" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesFields">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
 	<ListView x:Name="allFieldsList" ItemsSource="{x:Static local:FieldModel.FieldModelList}">
 		<ListView.ItemTemplate>
 			<DataTemplate>
@@ -16,4 +15,4 @@
 			</DataTemplate>
 		</ListView.ItemTemplate>
 	</ListView>
-</ContentPage>	
+</ContentPage>

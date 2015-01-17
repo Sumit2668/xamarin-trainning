@@ -40,7 +40,7 @@ namespace JiraMobile
 
 		async void OnItemTapped(object sender, ItemTappedEventArgs e)
 		{
-			await Navigation.PushModalAsync (new IssuesDetail ());
+			await Navigation.PushAsync (new IssuesDetail ());
 		}
 	}
 }

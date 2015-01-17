@@ -5,14 +5,14 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace JiraMobile.Pages
+namespace JiraMobile
 {
     public class App
     {
         public static Page GetMainPage()
         {
-
-			return new IssueList ();
+			return new NavigationPage (new IssueList ());
+//			return new IssueList ();
 		
         }
     }
