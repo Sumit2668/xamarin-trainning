@@ -4,25 +4,25 @@ using Xamarin.Forms;
 
 namespace JiraMobile.Pages
 {	
-	public partial class IssueGeneral : ContentPage, JiraMobile.Pages.HttpClientUtils.IProcessBarCallBack
+	public partial class IssueGeneral : ContentPage
 	{
 		public IssueGeneral ()
 		{
 			InitializeComponent ();
-			lbTest.Text = new HttpClientUtils ().getAllIssues ();
+			//lbTest.Text = new HttpClientUtils ().getAllIssues ();
 		}
 
-		public void Show()
-		{
-			processBar.IsVisible = true;
-			viewContent.IsVisible = false;
-		}
-
-		public void Hide()
-		{
-			processBar.IsVisible = false;
-			viewContent.IsVisible = true;
-		}
+//		public void Show()
+//		{
+//			processBar.IsVisible = true;
+//			viewContent.IsVisible = false;
+//		}
+//
+//		public void Hide()
+//		{
+//			processBar.IsVisible = false;
+//			viewContent.IsVisible = true;
+//		}
 	}
 }
 
