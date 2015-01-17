@@ -206,7 +206,7 @@ Global
 		{DDBACAD0-8DFF-4016-BE66-F908A4F3B10D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = JiraMobile\JiraMobile.iOS\JiraMobile.iOS.csproj
+		StartupItem = JiraMobile\JiraMobile.Android\JiraMobile.Android.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
