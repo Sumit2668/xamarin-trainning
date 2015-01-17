@@ -22,7 +22,7 @@
 						</StackLayout>
 						<StackLayout Orientation="Horizontal">
 							
-							<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
+							<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" WidthRequest="100"/>
 						</StackLayout>
 						<StackLayout Orientation="Horizontal">
 						<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}"/>
