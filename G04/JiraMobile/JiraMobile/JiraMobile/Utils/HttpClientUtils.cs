@@ -13,7 +13,7 @@ namespace JiraMobile.Pages
     {
 		// TODO : Mock data from Login screen
 		private string username = "HoaiLV2";
-		private string password = "XXXXX";
+		private string password = "Daoduclachinh111";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
@@ -37,7 +37,7 @@ namespace JiraMobile.Pages
 
 		public async Task<RootIssueDetail> getIssuesById(string id)
 		{
-			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/537055?fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype");
+			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/381632?fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype");
 			return json;
 		}
 
@@ -58,8 +58,9 @@ namespace JiraMobile.Pages
 			HttpClient client = new HttpClient ();
 			var response = await client.SendAsync (request);
 			var jsonResponse = await response.Content.ReadAsStringAsync ();
-
+			System.Diagnostics.Debug.WriteLine (jsonResponse);
 			this._IProcessBarCallBack.Hide ();
+			//System.Diagnostics.Debug.WriteLine (jsonResponse);
 
 			return JsonConvert.DeserializeObject<T> (jsonResponse);
 		}
