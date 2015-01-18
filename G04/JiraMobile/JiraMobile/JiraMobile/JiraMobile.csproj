@@ -57,6 +57,7 @@
     <Compile Include="Converter\DateConverter.cs" />
     <Compile Include="Converter\PriorityConverter.cs" />
     <Compile Include="Converter\StatusConverter.cs" />
+    <Compile Include="Object\RootIssueDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

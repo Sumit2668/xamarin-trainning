@@ -6,8 +6,8 @@
                        Title="Detail Issue"
                        >
     <CarouselPage.Children>
+		<local:IssuesFields Title="Fields" />
         <local:IssueGeneral Title="General" />
-        <local:IssuesFields Title="Fields" />
         <ContentPage Title="Comment" />
         <ContentPage Title="Worklog" />
     </CarouselPage.Children>

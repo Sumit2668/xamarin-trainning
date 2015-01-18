@@ -3,16 +3,19 @@
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
 	</ContentPage.Padding>
-	<ListView x:Name="allFieldsList" ItemsSource="{x:Static local:FieldModel.FieldModelList}">
+	<StackLayout Orientation="Vertical">
+	<ActivityIndicator IsRunning="true" x:Name="processBar" />
+	<ListView x:Name="allFieldsList">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
 					<StackLayout Orientation="Vertical">
 						<Label TextColor="Gray" Text="{Binding Name}" Font="Small" />
-						<Label Font="Medium" />
+						<Label Font="Medium" Text="{Binding Value}" />
 					</StackLayout>
 				</ViewCell>
 			</DataTemplate>
 		</ListView.ItemTemplate>
 	</ListView>
+	</StackLayout>
 </ContentPage>
