@@ -20,6 +20,8 @@ namespace JiraMobile
 
 			InitializeComponent ();
 
+			allIssueList.HasUnevenRows = true;
+
 			BindingContext = DataIssues.issueList;
 
 		}
@@ -41,6 +43,17 @@ namespace JiraMobile
 		async void OnItemTapped(object sender, ItemTappedEventArgs e)
 		{
 			await Navigation.PushAsync (new IssuesDetail ());
+		}
+
+		const int avgCharsInRow = 35;
+		const int defaultHeight = 44;
+		const int extraLineHeight = 20;
+		protected override void OnBindingContextChanged ()
+		{
+			base.OnBindingContextChanged ();
+			if (Device.OS == TargetPlatform.iOS) { // don't bother on the other platforms
+				allIssueList.RowHeight = 100;
+			}
 		}
 	}
 }
