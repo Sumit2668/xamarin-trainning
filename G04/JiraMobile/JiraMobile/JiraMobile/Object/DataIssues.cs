@@ -5,11 +5,11 @@ using System.Collections.ObjectModel;
 
 namespace JiraMobile
 {
-	public static class DataIssues
+	public class DataIssues
 	{
-		public static IList<Issue> issueList { get; private set; }
+		public IList<Issue> issueList { get; private set; }
 
-		static DataIssues ()
+		public DataIssues ()
 		{
 			ObservableCollection<Issue> issueOb = new ObservableCollection<Issue> ();
 			List<String> json = new List<String> ();

@@ -16,7 +16,7 @@
 		<ToolbarItem Name="More" Order="Primary" Priority="0" />
 	</ContentPage.ToolbarItems>
 	<StackLayout Orientation="Vertical">
-		<ActivityIndicator IsRunning="true" x:Name="processBar" />
+		<ActivityIndicator IsRunning="true" x:Name="processBar" Color="Blue" />
 		<ListView x:Name="allIssueList" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
 			<ListView.ItemTemplate>
 				<DataTemplate>
