@@ -9,13 +9,13 @@
 			<local:DateConverter x:Key="dateCvt" />
 			<local:PriorityConverter x:Key="priorityCvt" />
 			<local:StatusConverter x:Key="statusCvt" />
-			<!--<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="90" WinPhone="85" />-->
+			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="100" Android="85" WinPhone="85" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Name="More" Order="Primary" Priority="0" />
 	</ContentPage.ToolbarItems>
-	<ListView x:Name="allIssueList" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
+	<ListView x:Name="allIssueList" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
@@ -31,7 +31,7 @@
 						<StackLayout Orientation="Horizontal">
 							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}" />
 							<Label Text="{Binding fields.assignee.name}" Font="Bold,Small" />
-							<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand"/>
+							<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
 					</StackLayout>
 				</ViewCell>
