@@ -56,6 +56,7 @@
     <Compile Include="Converter\AvatarConverter.cs" />
     <Compile Include="Converter\DateConverter.cs" />
     <Compile Include="Converter\PriorityConverter.cs" />
+    <Compile Include="Converter\StatusConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -87,6 +88,12 @@
     <EmbeddedResource Include="Pages\IssueGeneral.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\done.png" />
+    <EmbeddedResource Include="Images\inprogress.png" />
+    <EmbeddedResource Include="Images\todo.png" />
+    <EmbeddedResource Include="Images\closed.png" />
+    <EmbeddedResource Include="Images\cancelled.png" />
+    <EmbeddedResource Include="Images\reopen.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\IssuesDetail.xaml">

@@ -8,27 +8,30 @@
 			<local:AvatarConverter x:Key="avtResourceCvt" />
 			<local:DateConverter x:Key="dateCvt" />
 			<local:PriorityConverter x:Key="priorityCvt" />
+			<local:StatusConverter x:Key="statusCvt" />
+			<!--<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="90" WinPhone="85" />-->
 		</ResourceDictionary>
 	</ContentPage.Resources>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="More" Order="Primary" Priority="0" />
+	</ContentPage.ToolbarItems>
 	<ListView x:Name="allIssueList" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
-					<StackLayout Orientation="Vertical">
-						
+					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding key}" Font="Bold,Small"/>
-							<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Bold,Medium" XAlign="End" HorizontalOptions="EndAndExpand"/>
+							<Label Text="{Binding key}" Font="Bold,Small" />
+							<Image x:Name="imgPriority" VerticalOptions="CenterAndExpand" WidthRequest="15" HeightRequest="15" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}" />
+							<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
 						<StackLayout Orientation="Horizontal">
-							
-							<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" WidthRequest="100"/>
+							<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
 						</StackLayout>
 						<StackLayout Orientation="Horizontal">
-						<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}"/>
+							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}" />
 							<Label Text="{Binding fields.assignee.name}" Font="Bold,Small" />
-							<Image x:Name="imgPriority" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}"/>
-							<Label Text="{Binding fields.priority.name}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand"/>
+							<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand"/>
 						</StackLayout>
 					</StackLayout>
 				</ViewCell>

@@ -8,7 +8,8 @@ using JiraMobile.Pages;
 namespace JiraMobile
 {	
 	public partial class IssueList : ContentPage
-	{	
+	{
+//		ToolbarItem itemMore; 
 		public IssueList ()
 		{
 			//List<ObservableCollection<Issue>> list = new List<ObservableCollection<Issue>> ();
@@ -20,10 +21,21 @@ namespace JiraMobile
 
 			InitializeComponent ();
 
-			allIssueList.HasUnevenRows = true;
+			//allIssueList.HasUnevenRows = true;
+
+//			itemMore = new ToolbarItem() { Name = "Edit" };
+			//ToolbarItems.Add (itemMore);
+//			itemMore.Activated += OnClickMore;
 
 			BindingContext = DataIssues.issueList;
 
+		}
+
+		void OnToolbarClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Debug.WriteLine ("Clicked");
+			//ToolbarItems.Remove(itemMore);
+			//ToolbarItems.Add(itemMore);
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)
@@ -43,18 +55,17 @@ namespace JiraMobile
 		async void OnItemTapped(object sender, ItemTappedEventArgs e)
 		{
 			await Navigation.PushAsync (new IssuesDetail ());
+
+			this.allIssueList.SelectedItem = null;
 		}
 
-		const int avgCharsInRow = 35;
-		const int defaultHeight = 44;
-		const int extraLineHeight = 20;
-		protected override void OnBindingContextChanged ()
-		{
-			base.OnBindingContextChanged ();
-			if (Device.OS == TargetPlatform.iOS) { // don't bother on the other platforms
-				allIssueList.RowHeight = 100;
-			}
-		}
+//		protected override void OnBindingContextChanged ()
+//		{
+//			base.OnBindingContextChanged ();
+////			if (Device.OS == TargetPlatform.iOS) { // don't bother on the other platforms
+////				allIssueList.RowHeight = 100;
+////			}
+//		}
 	}
 }
 

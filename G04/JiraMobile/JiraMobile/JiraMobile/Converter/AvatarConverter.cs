@@ -14,7 +14,7 @@ namespace JiraMobile
 		public object Convert (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
 			Assignee assignee = (Assignee)value;
-			ImageSource img = ImageSource.FromUri(new Uri(assignee.avatarUrls.avt_48x48));
+			ImageSource img = ImageSource.FromUri(new Uri(assignee.avatarUrls.avt_16x16));
 			return img;
 		}
 
