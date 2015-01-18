@@ -41,6 +41,18 @@ namespace JiraMobile.Pages
 			return json;
 		}
 
+		public async Task<List<Issue>> getAllIssueByProjectId(string key){
+			var json = await executeApi<AllIssuesModel> ("rest/api/2/search?jql=project="+ key+"&maxResults=10&&fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype,created");
+
+//			var result = JsonConvert.DeserializeObject<List<Issue>> (System.Convert.ToString(json));
+
+			if (json != null) {
+				return json.issues;
+			} 
+
+			return null;
+		}
+
 		public async Task<T> executeApi<T>(string url)
 		{
 			// display processbar
@@ -61,7 +73,9 @@ namespace JiraMobile.Pages
 
 			this._IProcessBarCallBack.Hide ();
 
-			return JsonConvert.DeserializeObject<T> (jsonResponse);
+			var jsonResult = JsonConvert.DeserializeObject<T> (jsonResponse);
+
+			return jsonResult;
 		}
 
 		public interface IProcessBarCallBack

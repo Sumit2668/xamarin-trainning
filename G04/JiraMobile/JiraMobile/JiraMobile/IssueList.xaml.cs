@@ -7,7 +7,7 @@ using JiraMobile.Pages;
 
 namespace JiraMobile
 {	
-	public partial class IssueList : ContentPage
+	public partial class IssueList : ContentPage, JiraMobile.Pages.HttpClientUtils.IProcessBarCallBack
 	{
 //		ToolbarItem itemMore; 
 		public IssueList ()
@@ -21,14 +21,24 @@ namespace JiraMobile
 
 			InitializeComponent ();
 
+			GetIssueByProject ("F11B13KFA");
+
 			//allIssueList.HasUnevenRows = true;
 
 //			itemMore = new ToolbarItem() { Name = "Edit" };
 			//ToolbarItems.Add (itemMore);
 //			itemMore.Activated += OnClickMore;
 
-			BindingContext = DataIssues.issueList;
 
+
+
+		}
+
+		async void GetIssueByProject(string projectID){
+			HttpClientUtils client = new HttpClientUtils ("", "", this);
+			var issueList = await client.getAllIssueByProjectId (projectID);
+
+			BindingContext = issueList;
 		}
 
 		void OnToolbarClick(object sender, EventArgs e)
@@ -66,6 +76,14 @@ namespace JiraMobile
 ////				allIssueList.RowHeight = 100;
 ////			}
 //		}
+
+		public void Show(){
+			this.processBar.IsVisible = true;
+		}
+
+		public void Hide(){
+			this.processBar.IsVisible = false;
+		}
 	}
 }
 

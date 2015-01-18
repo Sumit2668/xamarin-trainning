@@ -15,27 +15,30 @@
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Name="More" Order="Primary" Priority="0" />
 	</ContentPage.ToolbarItems>
-	<ListView x:Name="allIssueList" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
-						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding key}" Font="Bold,Small" />
-							<Image x:Name="imgPriority" VerticalOptions="CenterAndExpand" WidthRequest="15" HeightRequest="15" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}" />
-							<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+	<StackLayout Orientation="Vertical">
+		<ActivityIndicator IsRunning="true" x:Name="processBar" />
+		<ListView x:Name="allIssueList" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding key}" Font="Bold,Small" />
+								<Image x:Name="imgPriority" VerticalOptions="CenterAndExpand" WidthRequest="15" HeightRequest="15" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}" />
+								<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal">
+								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}" />
+								<Label Text="{Binding fields.assignee.name}" Font="Bold,Small" />
+								<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand" />
+							</StackLayout>
 						</StackLayout>
-						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
-						</StackLayout>
-						<StackLayout Orientation="Horizontal">
-							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}" />
-							<Label Text="{Binding fields.assignee.name}" Font="Bold,Small" />
-							<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand" />
-						</StackLayout>
-					</StackLayout>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
 </ContentPage>

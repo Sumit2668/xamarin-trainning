@@ -58,6 +58,7 @@
     <Compile Include="Converter\PriorityConverter.cs" />
     <Compile Include="Converter\StatusConverter.cs" />
     <Compile Include="Object\RootIssueDetail.cs" />
+    <Compile Include="Models\AllIssuesModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
