@@ -59,31 +59,30 @@ namespace JiraMobile.Pages
 			// display processbar
 			this._IProcessBarCallBack.Show ();
 
-			if (!String.IsNullOrEmpty(this.username) && !String.IsNullOrEmpty(this.password)) {
-				var request = new HttpRequestMessage () {
+			if (String.IsNullOrEmpty(this.username) || String.IsNullOrEmpty(this.password)) {
 
-					RequestUri = new Uri(baseURL + url),
-					Method = HttpMethod.Get
-				};
-
-				request.Headers.Add ("Authorization", "Basic " + authStrBuild);
-				request.Headers.Add ("User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0");
-
-				HttpClient client = new HttpClient ();
-				var response = await client.SendAsync (request);
-				var jsonResponse = await response.Content.ReadAsStringAsync ();
-
-				var jsonResult = JsonConvert.DeserializeObject<T> (jsonResponse);
-
-				this._IProcessBarCallBack.Hide ();
-
-				return jsonResult;
+				return default(T);
 			}
+
+			var request = new HttpRequestMessage () {
+
+				RequestUri = new Uri(baseURL + url),
+				Method = HttpMethod.Get
+			};
+
+			request.Headers.Add ("Authorization", "Basic " + authStrBuild);
+			request.Headers.Add ("User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0");
+
+			HttpClient client = new HttpClient ();
+			var response = await client.SendAsync (request);
+			var jsonResponse = await response.Content.ReadAsStringAsync ();
+
+			var jsonResult = JsonConvert.DeserializeObject<T> (jsonResponse);
 
 			this._IProcessBarCallBack.Hide ();
 			//System.Diagnostics.Debug.WriteLine (jsonResponse);
 
-			return null;
+			return jsonResult;
 		}
 
 		public interface IProcessBarCallBack
