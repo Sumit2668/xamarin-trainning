@@ -6,14 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using JiraMobile.Models;
 
 namespace JiraMobile.Pages
 {
     public class HttpClientUtils
     {
 		// TODO : Mock data from Login screen
-		private string username = "HoaiLV2";
-		private string password = "Daoduclachinh111";
+		private string username = "";
+		private string password = "";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
@@ -41,10 +42,27 @@ namespace JiraMobile.Pages
 			return json;
 		}
 
+		public async Task<List<Issue>> getAllIssueByProjectId(string key){
+			var json = await executeApi<AllIssuesModel> ("rest/api/2/search?jql=project="+ key+"&maxResults=10&&fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype,created");
+
+//			var result = JsonConvert.DeserializeObject<List<Issue>> (System.Convert.ToString(json));
+
+			if (json != null) {
+				return json.issues;
+			} 
+
+			return null;
+		}
+
 		public async Task<T> executeApi<T>(string url)
 		{
 			// display processbar
 			this._IProcessBarCallBack.Show ();
+
+			if (String.IsNullOrEmpty(this.username) || String.IsNullOrEmpty(this.password)) {
+
+				return default(T);
+			}
 
 			var request = new HttpRequestMessage () {
 
@@ -58,11 +76,13 @@ namespace JiraMobile.Pages
 			HttpClient client = new HttpClient ();
 			var response = await client.SendAsync (request);
 			var jsonResponse = await response.Content.ReadAsStringAsync ();
-			System.Diagnostics.Debug.WriteLine (jsonResponse);
+
+			var jsonResult = JsonConvert.DeserializeObject<T> (jsonResponse);
+
 			this._IProcessBarCallBack.Hide ();
 			//System.Diagnostics.Debug.WriteLine (jsonResponse);
 
-			return JsonConvert.DeserializeObject<T> (jsonResponse);
+			return jsonResult;
 		}
 
 		public interface IProcessBarCallBack
