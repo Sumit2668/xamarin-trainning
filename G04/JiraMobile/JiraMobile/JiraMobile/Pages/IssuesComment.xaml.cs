@@ -11,6 +11,11 @@ namespace JiraMobile.Pages
 			InitializeComponent ();
 			BindingContext = IssuesDetail.DataSource;
 		}
+
+		public void OnItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			this.listComment.SelectedItem = null;
+		}
 	}
 }
 

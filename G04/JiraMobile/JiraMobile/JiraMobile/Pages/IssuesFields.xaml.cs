@@ -41,6 +41,11 @@ namespace JiraMobile.Pages
 			processBar.IsVisible = false;
 			allFieldsList.IsVisible = true;
 		}
+
+		public void OnItemTapped(object sender, ItemTappedEventArgs e)
+		{
+			this.allFieldsList.SelectedItem = null;
+		}
 	}
 }
 
