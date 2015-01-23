@@ -10,6 +10,7 @@ namespace JiraMobile.Pages
 		public IssuesFields ()
 		{
 			InitializeComponent ();
+			this.
 			InitData ();
 
 			BindingContext = FieldModel.FieldModelList;
