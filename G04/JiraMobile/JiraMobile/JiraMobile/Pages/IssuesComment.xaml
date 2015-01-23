@@ -4,8 +4,6 @@
 		<ResourceDictionary>
 			<local:AvatarConverter x:Key="avtResourceCvt" />
 			<local:DateConverter x:Key="dateCvt" />
-			<local:PriorityConverter x:Key="priorityCvt" />
-			<local:StatusConverter x:Key="statusCvt" />
 			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="100" Android="85" WinPhone="85" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
@@ -15,9 +13,9 @@
 				<ViewCell>
 					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 						<StackLayout Orientation="Horizontal">
-							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author, Converter=JiraMobile.AvatarConverter}" />
+							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author, Converter={StaticResource avtResourceCvt}}" />
 							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
-							<Label Text="{Binding created, Converter=JiraMobile.DateConverter}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
 						<StackLayout Orientation="Horizontal">
 							<Label Text="{Binding body}" Font="Medium" />

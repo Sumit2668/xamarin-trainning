@@ -131,31 +131,11 @@ namespace JiraMobile
 	{
 		public string self { get; set; }
 		public string id { get; set; }
-		public Author author { get; set; }
+		public Assignee author { get; set; }
 		public string body { get; set; }
-		public UpdateAuthor updateAuthor { get; set; }
+		public Assignee updateAuthor { get; set; }
 		public string created { get; set; }
 		public string updated { get; set; }
-	}
-
-	public class UpdateAuthor
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string emailAddress { get; set; }
-		public AvatarUrls avatarUrls { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
-	}
-
-	public class Author
-	{
-		public string self { get; set; }
-		public string name { get; set; }
-		public string emailAddress { get; set; }
-		public AvatarUrls avatarUrls { get; set; }
-		public string displayName { get; set; }
-		public bool active { get; set; }
 	}
 
 	public class Fields

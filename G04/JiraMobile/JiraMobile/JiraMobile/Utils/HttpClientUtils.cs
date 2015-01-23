@@ -13,8 +13,8 @@ namespace JiraMobile.Pages
     public class HttpClientUtils
     {
 		// TODO : Mock data from Login screen
-		private string username = "";
-		private string password = "";
+		private string username = "HoaiLV2";
+		private string password = "Daoduclachinh111";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
@@ -38,7 +38,7 @@ namespace JiraMobile.Pages
 
 		public async Task<RootIssueDetail> getIssuesById(string id)
 		{
-			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/537055?fields=id,key,assignee,status,resolution,summary,description,comment,priority,worklog,creator,reporter,project,issuetype,updated");
+			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/" + id + "?fields=id,key,assignee,status,resolution,summary,description,comment,priority,worklog,creator,reporter,project,issuetype,updated");
 			return json;
 		}
 
