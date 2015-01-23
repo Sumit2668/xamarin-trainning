@@ -48,7 +48,9 @@ namespace JiraMobile
 
 		async void OnItemTapped(object sender, ItemTappedEventArgs e)
 		{
-			await Navigation.PushAsync (new IssuesDetail ());
+			var selectedItem = (Issue)this.allIssueList.SelectedItem;
+
+			await Navigation.PushAsync (new IssuesDetail (selectedItem.id));
 
 			this.allIssueList.SelectedItem = null;
 		}

@@ -12,19 +12,26 @@ namespace JiraMobile.Pages
 			InitializeComponent ();
 			InitData ();
 
-			allFieldsList.ItemsSource = FieldModel.FieldModelList;
+			BindingContext = FieldModel.FieldModelList;
 		}
 
 		async void InitData ()
 		{
-			IssuesDetail.DataSource = await new HttpClientUtils ("", "", this).getIssuesById ("537055");
-			FieldModel.FieldModelList [0].Value = IssuesDetail.DataSource.fields.project.name;
-			FieldModel.FieldModelList [1].Value = IssuesDetail.DataSource.fields.creator.name;
-			FieldModel.FieldModelList [2].Value = IssuesDetail.DataSource.fields.assignee.name;
-			FieldModel.FieldModelList [3].Value = IssuesDetail.DataSource.fields.status.name;
-			FieldModel.FieldModelList [4].Value = IssuesDetail.DataSource.fields.resolution.name;
-			FieldModel.FieldModelList [5].Value = IssuesDetail.DataSource.fields.issuetype.name;
-			FieldModel.FieldModelList [6].Value = IssuesDetail.DataSource.fields.priority.name;
+			IssuesDetail.DataSource = await new HttpClientUtils ("", "", this).getIssuesById (IssuesDetail.ID);
+			FieldModel.FieldModelList [0].Value = 
+				IssuesDetail.DataSource.fields.project != null ? IssuesDetail.DataSource.fields.project.name : string.Empty;
+			FieldModel.FieldModelList [1].Value = 
+				IssuesDetail.DataSource.fields.creator != null ? IssuesDetail.DataSource.fields.creator.name : string.Empty;
+			FieldModel.FieldModelList [2].Value = 
+				IssuesDetail.DataSource.fields.assignee != null ? IssuesDetail.DataSource.fields.assignee.name : string.Empty;
+			FieldModel.FieldModelList [3].Value = 
+				IssuesDetail.DataSource.fields.status != null ? IssuesDetail.DataSource.fields.status.name : string.Empty;
+			FieldModel.FieldModelList [4].Value = 
+				IssuesDetail.DataSource.fields.resolution != null ? IssuesDetail.DataSource.fields.resolution.name : string.Empty;
+			FieldModel.FieldModelList [5].Value = 
+				IssuesDetail.DataSource.fields.issuetype != null ? IssuesDetail.DataSource.fields.issuetype.name : string.Empty;
+			FieldModel.FieldModelList [6].Value = 
+				IssuesDetail.DataSource.fields.priority != null ? IssuesDetail.DataSource.fields.priority.name : string.Empty;
 
 			IssuesDetail.DataSource.fields.updated = "Update " + IssuesDetail.DataSource.fields.updated;
 			IssuesDetail.DataSource.fields.creator.displayName = "by " + IssuesDetail.DataSource.fields.creator.displayName;

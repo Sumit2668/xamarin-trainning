@@ -38,7 +38,8 @@ namespace JiraMobile.Pages
 
 		public async Task<RootIssueDetail> getIssuesById(string id)
 		{
-			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/" + id + "?fields=id,key,assignee,status,resolution,summary,description,comment,priority,worklog,creator,reporter,project,issuetype,updated");
+			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/"+id+"?fields=id,key,assignee,status,resolution,summary,description,comment,priority,worklog,creator,reporter,project,issuetype,updated");
+			System.Diagnostics.Debug.WriteLine ("aaa" + id);
 			return json;
 		}
 
