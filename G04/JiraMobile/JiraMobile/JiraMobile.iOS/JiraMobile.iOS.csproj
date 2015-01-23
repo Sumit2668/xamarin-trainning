@@ -9,6 +9,7 @@
     <RootNamespace>JiraMobile.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <NuGetPackageImportStamp>a147497b</NuGetPackageImportStamp>
+    <AssemblyName>FormsTemplateiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

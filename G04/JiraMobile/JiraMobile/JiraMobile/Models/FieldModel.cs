@@ -28,6 +28,15 @@ namespace JiraMobile.Models
 		{
 			FieldModelList = new ObservableCollection<FieldIssues> {
 				new FieldIssues {
+					Name = "Project"
+				},
+				new FieldIssues {
+					Name = "Creator"
+				},
+				new FieldIssues {
+					Name = "Assignee"
+				},
+				new FieldIssues {
 					Name = "Status"
 				},
 				new FieldIssues {

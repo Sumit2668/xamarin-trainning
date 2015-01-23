@@ -5,7 +5,7 @@
 	</ContentPage.Padding>
 	<StackLayout Orientation="Vertical">
 	<ActivityIndicator IsRunning="true" x:Name="processBar" />
-	<ListView x:Name="allFieldsList">
+	<ListView x:Name="allFieldsList" IsVisible="false">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>

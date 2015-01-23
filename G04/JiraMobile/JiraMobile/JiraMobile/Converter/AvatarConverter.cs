@@ -13,6 +13,11 @@ namespace JiraMobile
 
 		public object Convert (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
+			if (value == null) 
+			{
+				return null;
+			}
+
 			Assignee assignee = (Assignee)value;
 			ImageSource img = ImageSource.FromUri(new Uri(assignee.avatarUrls.avt_16x16));
 			return img;
@@ -20,7 +25,7 @@ namespace JiraMobile
 
 		public object ConvertBack (object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
-			throw new NotImplementedException ();
+			return value;
 		}
 
 		#endregion

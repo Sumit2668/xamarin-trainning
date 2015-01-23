@@ -58,6 +58,9 @@
     <Compile Include="Converter\PriorityConverter.cs" />
     <Compile Include="Converter\StatusConverter.cs" />
     <Compile Include="Object\RootIssueDetail.cs" />
+    <Compile Include="Pages\IssuesComment.xaml.cs">
+      <DependentUpon>IssuesComment.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -95,6 +98,9 @@
     <EmbeddedResource Include="Images\closed.png" />
     <EmbeddedResource Include="Images\cancelled.png" />
     <EmbeddedResource Include="Images\reopen.png" />
+    <EmbeddedResource Include="Pages\IssuesComment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\IssuesDetail.xaml">

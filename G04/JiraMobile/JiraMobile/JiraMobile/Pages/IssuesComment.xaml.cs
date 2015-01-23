@@ -4,12 +4,11 @@ using Xamarin.Forms;
 
 namespace JiraMobile.Pages
 {	
-	public partial class IssueGeneral : ContentPage
-	{
-		public IssueGeneral ()
+	public partial class IssuesComment : ContentPage
+	{	
+		public IssuesComment ()
 		{
 			InitializeComponent ();
-
 			BindingContext = IssuesDetail.DataSource;
 		}
 	}
