@@ -43,7 +43,7 @@ namespace JiraMobile.Pages
 		}
 
 		public async Task<List<Issue>> getAllIssueByProjectId(string key){
-			var json = await executeApi<AllIssuesModel> ("rest/api/2/search?jql=project="+ key+"&maxResults=10&&fields=id,key,assignee,status,resolution,summary,description,comments,priority,worklog,creator,reporter,project,issuetype,created");
+			var json = await executeApi<AllIssuesModel> ("rest/api/2/search?jql=project="+ key+"&maxResults=10&&fields=id,key,assignee,status,summary,priority,creator,reporter,project,issuetype,created");
 
 //			var result = JsonConvert.DeserializeObject<List<Issue>> (System.Convert.ToString(json));
 
