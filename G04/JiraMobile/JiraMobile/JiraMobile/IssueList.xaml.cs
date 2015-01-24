@@ -9,41 +9,41 @@ namespace JiraMobile
 {	
 	public partial class IssueList : ContentPage, JiraMobile.Pages.HttpClientUtils.IProcessBarCallBack
 	{
+		HttpClientUtils client;
+
+		private static List<Issue> issueList;
+
 		public IssueList ()
 		{
 
 			InitializeComponent ();
 
+			client = new HttpClientUtils ("", "", this);
+
 			GetIssueByProject ("F11B13KFA");
 
-			//allIssueList.HasUnevenRows = true;
+			tblMore.Activated += OnToolbarClick;
 
-//			itemMore = new ToolbarItem() { Name = "Edit" };
-			//ToolbarItems.Add (itemMore);
-//			itemMore.Activated += OnClickMore;
-
-
+			//ToolbarItem item = new ToolbarItem();
 
 
 		}
 
 		async void GetIssueByProject(string projectID){
-			HttpClientUtils client = new HttpClientUtils ("", "", this);
-			var issueList = await client.getAllIssueByProjectId (projectID);
+
+			issueList = await client.getAllIssueByProjectId (projectID);
 
 			BindingContext = issueList;
 		}
 
 		void OnToolbarClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Debug.WriteLine ("Clicked");
-			//ToolbarItems.Remove(itemMore);
-			//ToolbarItems.Add(itemMore);
+			GetIssueByProject ("F11B13KFA");
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)
 		{
-		
+
 		}
 
 		async void OnItemTapped(object sender, ItemTappedEventArgs e)
@@ -65,10 +65,12 @@ namespace JiraMobile
 
 		public void Show(){
 			this.processBar.IsVisible = true;
+			allIssueList.IsVisible = false;
 		}
 
 		public void Hide(){
 			this.processBar.IsVisible = false;
+			allIssueList.IsVisible = true;
 		}
 	}
 }
