@@ -14,11 +14,12 @@ namespace JiraMobile.Pages
 		/// <value>The data source.</value>
 		public static RootIssueDetail DataSource { get; set; }
 
-        public IssuesDetail()
+		public static String ID { get; set; }
+
+		public IssuesDetail(String id)
         {
+			ID = id;
             InitializeComponent();
-
-
         }
-    }
+	}
 }

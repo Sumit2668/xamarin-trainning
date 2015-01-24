@@ -62,6 +62,9 @@
       <DependentUpon>IssuesComment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\AllIssuesModel.cs" />
+    <Compile Include="Pages\IssuesLogWork.xaml.cs">
+      <DependentUpon>IssuesLogWork.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -100,6 +103,9 @@
     <EmbeddedResource Include="Images\cancelled.png" />
     <EmbeddedResource Include="Images\reopen.png" />
     <EmbeddedResource Include="Pages\IssuesComment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IssuesLogWork.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

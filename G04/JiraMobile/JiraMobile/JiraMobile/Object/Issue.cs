@@ -71,7 +71,21 @@ namespace JiraMobile
 		public int startAt { get; set; }
 		public int maxResults { get; set; }
 		public int total { get; set; }
-		public List<object> worklogs { get; set; }
+		public List<WorkLogDetail> worklogs { get; set; }
+	}
+
+	public class WorkLogDetail
+	{
+		public string self { get; set; }
+		public Assignee author { get; set; }
+		public Assignee updateAuthor { get; set; }
+		public string comment { get; set; }
+		public string created { get; set; }
+		public string updated { get; set; }
+		public string started { get; set; }
+		public string timeSpent { get; set; }
+		public int timeSpentSeconds { get; set; }
+		public string id { get; set; }
 	}
 
 	public class Assignee
