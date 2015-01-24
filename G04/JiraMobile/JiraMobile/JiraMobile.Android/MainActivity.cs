@@ -13,7 +13,7 @@ using JiraMobile.Pages;
 namespace JiraMobile.Pages
 {
     [Activity(Label = "JiraMobile", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : AndroidActivity
+	public class MainActivity : FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
