@@ -13,8 +13,8 @@ namespace JiraMobile.Pages
     public class HttpClientUtils
     {
 		// TODO : Mock data from Login screen
-		private string username = "HoaiLV2";
-		private string password = "Daoduclachinh111";
+		private string username = "";
+		private string password = "";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
@@ -27,11 +27,10 @@ namespace JiraMobile.Pages
 			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (username + ":" + password));
 		}
 
-		public HttpClientUtils(string username, string password, IProcessBarCallBack _IProcessBarCallBack)
+		public HttpClientUtils(IProcessBarCallBack _IProcessBarCallBack)
 		{
-			// TODO : uncomment
-//			this.username = username;
-//			this.password = password;
+			this.username = Login.strUserName;
+			this.password = Login.strPassword;
 			this._IProcessBarCallBack = _IProcessBarCallBack;
 			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (this.username + ":" + this.password));
 		}
@@ -52,6 +51,12 @@ namespace JiraMobile.Pages
 			} 
 
 			return null;
+		}
+
+		public async Task<bool> authenAccount(string acc)
+		{
+			System.Net.HttpStatusCode resultAuthen =  await executeLogin("rest/auth/latest/session");
+			return resultAuthen != System.Net.HttpStatusCode.Unauthorized;
 		}
 
 		public async Task<T> executeApi<T>(string url)
@@ -90,5 +95,34 @@ namespace JiraMobile.Pages
 			void Show ();
 			void Hide();
 		}
+
+		public async Task<System.Net.HttpStatusCode> executeLogin(string url)
+		{
+			// display processbar
+			this._IProcessBarCallBack.Show ();
+
+			if (String.IsNullOrEmpty(this.username) || String.IsNullOrEmpty(this.password)) {
+
+				return System.Net.HttpStatusCode.NonAuthoritativeInformation;
+			}
+
+			var request = new HttpRequestMessage () {
+
+				RequestUri = new Uri(baseURL + url),
+				Method = HttpMethod.Get
+			};
+
+			request.Headers.Add ("Authorization", "Basic " + authStrBuild);
+			request.Headers.Add ("User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0");
+
+			HttpClient client = new HttpClient ();
+			var response = await client.SendAsync (request);
+
+			System.Net.HttpStatusCode resultResponse = response.StatusCode;
+			//System.Diagnostics.Debug.WriteLine (jsonResponse);
+
+			return resultResponse;
+		}
+
     }
 }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>  
+<ContentPage Title="Login Jira Mobile" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Login">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
+		<StackLayout VerticalOptions="Center">
+			<ActivityIndicator IsRunning="true" x:Name="processBar" />
+			<Entry x:Name="txtUserName" Placeholder = "UserName" WidthRequest="5" />
+			<Entry x:Name="txtPass" Placeholder="Password" WidthRequest="5" IsPassword="true" />
+			<Button x:Name="btnLogin" Text="Login" Clicked="btnLogin_OnClick" />
+  		</StackLayout>
+</ContentPage>
