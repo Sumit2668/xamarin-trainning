@@ -9,6 +9,6 @@
 		<local:IssuesFields Title="Fields" />
         <local:IssueGeneral Title="General" />
         <local:IssuesComment Title="Comment" />
-        <ContentPage Title="Worklog" />
+        <local:IssuesLogWork Title="Work Log" />
     </CarouselPage.Children>
 </CarouselPage>
