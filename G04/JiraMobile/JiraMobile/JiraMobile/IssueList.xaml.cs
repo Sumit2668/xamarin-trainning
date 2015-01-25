@@ -18,7 +18,7 @@ namespace JiraMobile
 
 			InitializeComponent ();
 
-			client = new HttpClientUtils ("", "", this);
+			client = new HttpClientUtils (this);
 
 			GetIssueByProject ("F11B13KFA");
 

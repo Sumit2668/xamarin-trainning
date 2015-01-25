@@ -18,7 +18,7 @@ namespace JiraMobile.Pages
 
 		async void InitData ()
 		{
-			IssuesDetail.DataSource = await new HttpClientUtils ("", "", this).getIssuesById (IssuesDetail.ID);
+			IssuesDetail.DataSource = await new HttpClientUtils (this).getIssuesById (IssuesDetail.ID);
 			FieldModel.FieldModelList [0].Value = 
 				IssuesDetail.DataSource.fields.project != null ? IssuesDetail.DataSource.fields.project.name : string.Empty;
 			FieldModel.FieldModelList [1].Value = 
