@@ -33,6 +33,8 @@ namespace JiraMobile.Pages
 			this.password = Login.strPassword;
 			this._IProcessBarCallBack = _IProcessBarCallBack;
 			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (this.username + ":" + this.password));
+
+
 		}
 
 		public async Task<RootIssueDetail> getIssuesById(string id)
@@ -65,7 +67,7 @@ namespace JiraMobile.Pages
 			// display processbar
 			this._IProcessBarCallBack.Show ();
 
-			if (String.IsNullOrEmpty(this.username) || String.IsNullOrEmpty(this.password)) {
+			if (String.IsNullOrEmpty(Login.strUserName) || String.IsNullOrEmpty(Login.strPassword)) {
 
 				return default(T);
 			}

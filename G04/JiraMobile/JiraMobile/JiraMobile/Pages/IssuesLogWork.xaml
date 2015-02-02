@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesLogWork">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
+	</ContentPage.Padding>
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<local:DateConverter x:Key="dateCvt" />
-			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="100" Android="85" WinPhone="85" />
+			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="85" Android="70" WinPhone="70" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<ListView x:Name="listLogWork" ItemsSource="{Binding fields.worklog.worklogs}" ItemTapped="OnItemTapped">
+	<ListView x:Name="listLogWork" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding fields.worklog.worklogs}" ItemTapped="OnItemTapped">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
@@ -15,9 +18,10 @@
 							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
 							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
-<!--						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding body}" Font="Medium" />
-						</StackLayout>-->
+						<StackLayout Orientation="Horizontal" Padding="5, 5, 0, 5">
+							<Label Text="{Binding timeSpent}" Font="Medium" />
+							<Label Text="{Binding comment}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+						</StackLayout>
 					</StackLayout>
 				</ViewCell>
 			</DataTemplate>

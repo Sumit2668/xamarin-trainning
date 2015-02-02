@@ -10,21 +10,21 @@ namespace JiraMobile.Pages
 		public IssuesFields ()
 		{
 			InitializeComponent ();
-			this.
-			InitData ();
-
 			BindingContext = FieldModel.FieldModelList;
+			this.InitData ();
 		}
 
 		async void InitData ()
 		{
-			IssuesDetail.DataSource = await new HttpClientUtils (this).getIssuesById (IssuesDetail.ID);
+			var x = await new HttpClientUtils (this).getIssuesById (IssuesDetail.ID);
+			IssuesDetail.DataSource.fields = x.fields;
+
 			FieldModel.FieldModelList [0].Value = 
 				IssuesDetail.DataSource.fields.project != null ? IssuesDetail.DataSource.fields.project.name : string.Empty;
 			FieldModel.FieldModelList [1].Value = 
-				IssuesDetail.DataSource.fields.creator != null ? IssuesDetail.DataSource.fields.creator.name : string.Empty;
+				IssuesDetail.DataSource.fields.creator != null ? IssuesDetail.DataSource.fields.creator.displayName : string.Empty;
 			FieldModel.FieldModelList [2].Value = 
-				IssuesDetail.DataSource.fields.assignee != null ? IssuesDetail.DataSource.fields.assignee.name : string.Empty;
+				IssuesDetail.DataSource.fields.assignee != null ? IssuesDetail.DataSource.fields.assignee.displayName : string.Empty;
 			FieldModel.FieldModelList [3].Value = 
 				IssuesDetail.DataSource.fields.status != null ? IssuesDetail.DataSource.fields.status.name : string.Empty;
 			FieldModel.FieldModelList [4].Value = 

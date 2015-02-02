@@ -4,16 +4,25 @@ using System.Collections.ObjectModel;
 
 namespace JiraMobile.Models
 {
-	public class FieldIssues
+	public class FieldIssues : BaseModel
 	{
+		private string _name;
+		private string _value;
+
 		public string Name {
-			get;
-			set;
+			get { return _name; }
+			set 
+			{
+				SetPropertyValue(ref _name, value);
+			}
 		}
 
 		public string Value {
-			get;
-			set;
+			get { return _value; }
+			set 
+			{
+				SetPropertyValue(ref _value, value);
+			}
 		}
 
 		public override string ToString ()
