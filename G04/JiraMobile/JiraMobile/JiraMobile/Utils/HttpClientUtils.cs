@@ -24,7 +24,7 @@ namespace JiraMobile.Pages
 			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (Login.strUserName + ":" + Login.strPassword));
 
 			// TODO : hardcode
-			authStrBuild = "dGhhbmhkYzM6QCNoaXBpQCM0NQ==";
+//			authStrBuild = "dGhhbmhkYzM6QCNoaXBpQCM0NQ==";
 		}
 
 		public async Task<RootIssueDetail> getIssuesById(string id)

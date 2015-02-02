@@ -11,7 +11,7 @@ namespace JiraMobile
     {
         public static Page GetMainPage()
         {
-			return new NavigationPage (new IssueList ());
+			return new NavigationPage (new Login ());
 //			return new IssueList ();
 		
         }

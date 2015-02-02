@@ -9,8 +9,8 @@ namespace JiraMobile
 
 	public partial class Login : ContentPage, JiraMobile.Pages.HttpClientUtils.IProcessBarCallBack
 	{
-		public static string strUserName = "DataToPassLoginScreen";
-		public static string strPassword = "DataToPassLoginScreen";
+		public static string strUserName = "";
+		public static string strPassword = "";
 		public Login ()
 		{
 			InitializeComponent ();
@@ -33,8 +33,9 @@ namespace JiraMobile
 				txtUserName.IsVisible = true;
 				txtPass.IsVisible = true;
 				btnLogin.IsVisible = true;
+				await DisplayAlert ("Error", "Username or password is incorrect", "OK");
 			}
-			else 
+			else
 			{
 				await Navigation.PushAsync (new IssueList ());
 			}
