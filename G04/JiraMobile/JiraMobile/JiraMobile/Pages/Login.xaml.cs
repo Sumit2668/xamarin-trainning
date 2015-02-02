@@ -9,8 +9,8 @@ namespace JiraMobile
 
 	public partial class Login : ContentPage, JiraMobile.Pages.HttpClientUtils.IProcessBarCallBack
 	{
-		public static string strUserName = "";
-		public static string strPassword = "";
+		public static string strUserName = "DataToPassLoginScreen";
+		public static string strPassword = "DataToPassLoginScreen";
 		public Login ()
 		{
 			InitializeComponent ();
@@ -26,8 +26,7 @@ namespace JiraMobile
 
 		async void AuthencationAccount(){
 			HttpClientUtils client = new HttpClientUtils (this);
-			//HttpClientUtils client = new HttpClientUtils (strUserName, strPassword, this);
-			var result = await client.authenAccount ("");
+			var result = await client.authenAccount ();
 			if (!result)
 			{
 				processBar.IsVisible = false;

@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Models\DetailModel.cs" />
     <Compile Include="Pages\IssuesDetail.xaml.cs">
       <DependentUpon>IssuesDetail.xaml</DependentUpon>
     </Compile>
@@ -48,25 +47,24 @@
     <Compile Include="Pages\IssueGeneral.xaml.cs">
       <DependentUpon>IssueGeneral.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IssueList.xaml.cs">
-      <DependentUpon>IssueList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Object\DataIssues.cs" />
-    <Compile Include="Object\Issue.cs" />
     <Compile Include="Converter\AvatarConverter.cs" />
     <Compile Include="Converter\DateConverter.cs" />
     <Compile Include="Converter\PriorityConverter.cs" />
     <Compile Include="Converter\StatusConverter.cs" />
-    <Compile Include="Object\RootIssueDetail.cs" />
     <Compile Include="Pages\IssuesComment.xaml.cs">
       <DependentUpon>IssuesComment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\AllIssuesModel.cs" />
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Pages\IssuesLogWork.xaml.cs">
       <DependentUpon>IssuesLogWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue.cs" />
+    <Compile Include="Models\RootIssueDetail.cs" />
+    <Compile Include="Pages\IssueList.xaml.cs">
+      <DependentUpon>IssueList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -110,8 +108,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\IssuesLogWork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\IssueList.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -144,9 +145,6 @@
   </Target>
   -->
   <ItemGroup>
-    <EmbeddedResource Include="IssueList.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Images\useravatar.png" />
     <EmbeddedResource Include="Images\blocker.png" />
     <EmbeddedResource Include="Images\critical.png" />
@@ -155,7 +153,6 @@
     <EmbeddedResource Include="Images\trivial.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Object\" />
     <Folder Include="Converter\" />
     <Folder Include="Images\" />
   </ItemGroup>

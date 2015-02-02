@@ -12,6 +12,5 @@ namespace JiraMobile.Models
 		public int total { get; set; }
 		public List<Issue> issues { get; set; }
 	}
-
 }
 

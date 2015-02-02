@@ -18,7 +18,7 @@ namespace JiraMobile
 				return null;
 			}
 
-			Assignee assignee = (Assignee)value;
+			User assignee = (User)value;
 			ImageSource img = ImageSource.FromUri(new Uri(assignee.avatarUrls.avt_16x16));
 			return img;
 		}

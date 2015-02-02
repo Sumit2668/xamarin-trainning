@@ -12,29 +12,19 @@ namespace JiraMobile.Pages
 {
     public class HttpClientUtils
     {
-		// TODO : Mock data from Login screen
-		private string username = "";
-		private string password = "";
 		private IProcessBarCallBack _IProcessBarCallBack;
 
 		private string authStrBuild = "";
 
 		private string baseURL = "https://insight.fsoft.com.vn/jira/";
 
-		// TODO : Constructor Mock
-		public HttpClientUtils()
-		{
-			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (username + ":" + password));
-		}
-
 		public HttpClientUtils(IProcessBarCallBack _IProcessBarCallBack)
 		{
-			this.username = Login.strUserName;
-			this.password = Login.strPassword;
 			this._IProcessBarCallBack = _IProcessBarCallBack;
-			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (this.username + ":" + this.password));
+			authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes (Login.strUserName + ":" + Login.strPassword));
 
-
+			// TODO : hardcode
+			authStrBuild = "dGhhbmhkYzM6QCNoaXBpQCM0NQ==";
 		}
 
 		public async Task<RootIssueDetail> getIssuesById(string id)
@@ -47,8 +37,6 @@ namespace JiraMobile.Pages
 		public async Task<List<Issue>> getAllIssueByProjectId(string key){
 			var json = await executeApi<AllIssuesModel> ("rest/api/2/search?jql=project="+ key+"&maxResults=10&&fields=id,key,assignee,status,summary,priority,creator,reporter,project,issuetype,created");
 
-//			var result = JsonConvert.DeserializeObject<List<Issue>> (System.Convert.ToString(json));
-
 			if (json != null) {
 				return json.issues;
 			} 
@@ -56,7 +44,7 @@ namespace JiraMobile.Pages
 			return null;
 		}
 
-		public async Task<bool> authenAccount(string acc)
+		public async Task<bool> authenAccount()
 		{
 			System.Net.HttpStatusCode resultAuthen =  await executeLogin("rest/auth/latest/session");
 			return resultAuthen != System.Net.HttpStatusCode.Unauthorized;
@@ -88,7 +76,6 @@ namespace JiraMobile.Pages
 			var jsonResult = JsonConvert.DeserializeObject<T> (jsonResponse);
 
 			this._IProcessBarCallBack.Hide ();
-			//System.Diagnostics.Debug.WriteLine (jsonResponse);
 
 			return jsonResult;
 		}
@@ -104,7 +91,7 @@ namespace JiraMobile.Pages
 			// display processbar
 			this._IProcessBarCallBack.Show ();
 
-			if (String.IsNullOrEmpty(this.username) || String.IsNullOrEmpty(this.password)) {
+			if (String.IsNullOrEmpty(Login.strUserName) || String.IsNullOrEmpty(Login.strUserName)) {
 
 				return System.Net.HttpStatusCode.NonAuthoritativeInformation;
 			}
@@ -122,7 +109,6 @@ namespace JiraMobile.Pages
 			var response = await client.SendAsync (request);
 
 			System.Net.HttpStatusCode resultResponse = response.StatusCode;
-			//System.Diagnostics.Debug.WriteLine (jsonResponse);
 
 			return resultResponse;
 		}

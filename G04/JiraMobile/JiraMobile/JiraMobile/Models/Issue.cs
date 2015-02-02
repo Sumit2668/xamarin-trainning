@@ -187,7 +187,7 @@ namespace JiraMobile
 		}
 	}
 
-	public class Creator : BaseModel
+	public class User : BaseModel
 	{
 		private string _self;
 
@@ -304,70 +304,6 @@ namespace JiraMobile
 		}
 	}
 
-
-	public class Reporter : BaseModel
-	{
-		private string _self;
-
-		public string self {
-			get{ return _self; }
-			set {
-				SetPropertyValue(ref _self, value);
-				
-			}
-		}
-
-		private string _name;
-
-		public string name {
-			get{ return _name; }
-			set {
-				SetPropertyValue(ref _name, value);
-				
-			}
-		}
-
-		private string _emailAddress;
-
-		public string emailAddress {
-			get{ return _emailAddress; }
-			set {
-				SetPropertyValue(ref _emailAddress, value);
-				
-			}
-		}
-
-		private AvatarUrls _avatarUrls;
-
-		public AvatarUrls avatarUrls {
-			get{ return _avatarUrls; }
-			set {
-				SetPropertyValue(ref _avatarUrls, value);
-				
-			}
-		}
-
-		private string _displayName;
-
-		public string displayName {
-			get{ return _displayName; }
-			set {
-				SetPropertyValue(ref _displayName, value);
-				
-			}
-		}
-
-		private bool _active;
-
-		public bool active {
-			get{ return _active; }
-			set {
-				SetPropertyValue(ref _active, value);
-				
-			}
-		}
-	}
-
 	public class Worklog : BaseModel
 	{
 		private int _startAt;
@@ -415,9 +351,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Assignee _author;
+		private User _author;
 
-		public Assignee author {
+		public User author {
 			get{ return _author; }
 			set {
 				SetPropertyValue(ref _author, value);
@@ -425,9 +361,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Assignee _updateAuthor;
+		private User _updateAuthor;
 
-		public Assignee updateAuthor {
+		public User updateAuthor {
 			get{ return _updateAuthor; }
 			set {
 				SetPropertyValue(ref _updateAuthor, value);
@@ -501,69 +437,6 @@ namespace JiraMobile
 			get{ return _id; }
 			set {
 				SetPropertyValue(ref _id, value);
-				
-			}
-		}
-	}
-
-	public class Assignee : BaseModel
-	{
-		private string _self;
-
-		public string self {
-			get{ return _self; }
-			set {
-				SetPropertyValue(ref _self, value);
-				
-			}
-		}
-
-		private string _name;
-
-		public string name {
-			get{ return _name; }
-			set {
-				SetPropertyValue(ref _name, value);
-				
-			}
-		}
-
-		private string _emailAddress;
-
-		public string emailAddress {
-			get{ return _emailAddress; }
-			set {
-				SetPropertyValue(ref _emailAddress, value);
-				
-			}
-		}
-
-		private AvatarUrls _avatarUrls;
-
-		public AvatarUrls avatarUrls {
-			get{ return _avatarUrls; }
-			set {
-				SetPropertyValue(ref _avatarUrls, value);
-				
-			}
-		}
-
-		private string _displayName;
-
-		public string displayName {
-			get{ return _displayName; }
-			set {
-				SetPropertyValue(ref _displayName, value);
-				
-			}
-		}
-
-		private bool _active;
-
-		public bool active {
-			get{ return _active; }
-			set {
-				SetPropertyValue(ref _active, value);
 				
 			}
 		}
@@ -828,9 +701,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Assignee _author;
+		private User _author;
 
-		public Assignee author {
+		public User author {
 			get{ return _author; }
 			set {
 				SetPropertyValue(ref _author, value);
@@ -848,9 +721,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Assignee _updateAuthor;
+		private User _updateAuthor;
 
-		public Assignee updateAuthor {
+		public User updateAuthor {
 			get{ return _updateAuthor; }
 			set {
 				SetPropertyValue(ref _updateAuthor, value);
@@ -901,9 +774,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Creator _creator;
+		private User _creator;
 
-		public Creator creator {
+		public User creator {
 			get{ return _creator; }
 			set {
 				SetPropertyValue(ref _creator, value);
@@ -941,9 +814,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Reporter _reporter;
+		private User _reporter;
 
-		public Reporter reporter {
+		public User reporter {
 			get{ return _reporter; }
 			set {
 				SetPropertyValue(ref _reporter, value);
@@ -971,9 +844,9 @@ namespace JiraMobile
 			}
 		}
 
-		private Assignee _assignee;
+		private User _assignee;
 
-		public Assignee assignee {
+		public User assignee {
 			get{ return _assignee; }
 			set {
 				SetPropertyValue(ref _assignee, value);

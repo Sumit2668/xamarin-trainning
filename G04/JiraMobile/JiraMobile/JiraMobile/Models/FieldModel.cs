@@ -11,17 +11,15 @@ namespace JiraMobile.Models
 
 		public string Name {
 			get { return _name; }
-			set 
-			{
-				SetPropertyValue(ref _name, value);
+			set {
+				SetPropertyValue (ref _name, value);
 			}
 		}
 
 		public string Value {
 			get { return _value; }
-			set 
-			{
-				SetPropertyValue(ref _value, value);
+			set {
+				SetPropertyValue (ref _value, value);
 			}
 		}
 
@@ -31,7 +29,7 @@ namespace JiraMobile.Models
 		}
 	}
 
-	public static class FieldModel
+	public class FieldModel
 	{
 		static FieldModel ()
 		{
@@ -62,19 +60,8 @@ namespace JiraMobile.Models
 				}
 			};
 		}
+
 		public static IList<FieldIssues> FieldModelList { get; private set; }
-
-		static FieldIssues GetByName(string name)
-		{
-			foreach (var model in FieldModelList) {
-				if (model.Name.Equals (name)) {
-
-					return model;
-				}
-			}
-
-			return null;
-		}
 	}
 }
 

@@ -14,7 +14,7 @@ namespace JiraMobile.Pages
 
 		protected void OnItemTapped(object sender, ItemTappedEventArgs e)
 		{
-
+			listLogWork.SelectedItem = null;
 		}
 	}
 }
