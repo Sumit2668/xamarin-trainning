@@ -70,6 +70,7 @@
       <DependentUpon>ProjectList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converter\AvatarProjectConverter.cs" />
+    <Compile Include="Utils\ILoginManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

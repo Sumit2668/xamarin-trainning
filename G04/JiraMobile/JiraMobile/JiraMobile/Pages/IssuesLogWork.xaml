@@ -5,8 +5,9 @@
 	</ContentPage.Padding>
 	<ContentPage.Resources>
 		<ResourceDictionary>
+			<local:AvatarConverter x:Key="avtResourceCvt" />
 			<local:DateConverter x:Key="dateCvt" />
-			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="85" Android="70" WinPhone="70" />
+			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="75" Android="60" WinPhone="60" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<ListView x:Name="listLogWork" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding fields.worklog.worklogs}" ItemTapped="OnItemTapped">
@@ -14,11 +15,13 @@
 			<DataTemplate>
 				<ViewCell>
 					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
-						<StackLayout Orientation="Horizontal">							
+						<StackLayout Orientation="Horizontal">
+							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />							
 							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
 							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
 						<StackLayout Orientation="Horizontal" Padding="5, 5, 0, 5">
+							<Label Text="Time : " Font="Medium" />
 							<Label Text="{Binding timeSpent}" Font="Medium" />
 							<Label Text="{Binding comment}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>

@@ -17,7 +17,7 @@
 				<ViewCell>
 					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 							<StackLayout Orientation="Horizontal">
-								<Image x:Name="imgAvaar" VerticalOptions="CenterAndExpand" WidthRequest="48" HeightRequest="48" Aspect="AspectFit" Source="{Binding avatarUrls, Converter={StaticResource avtResourceCvt}}" />
+								<Image x:Name="imgAvatar" VerticalOptions="CenterAndExpand" WidthRequest="48" HeightRequest="48" Aspect="AspectFit" Source="{Binding avatarUrls, Converter={StaticResource avtResourceCvt}}" />
 								<StackLayout Orientation="Vertical">
 									<Label Text="{Binding name}" VerticalOptions="CenterAndExpand" />
 									<Label Text="{Binding key}" Font="Medium" TextColor="Accent" />

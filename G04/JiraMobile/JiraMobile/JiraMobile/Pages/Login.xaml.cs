@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using JiraMobile.Pages;
+using JiraMobile.Utils;
 
 namespace JiraMobile
 {
@@ -11,10 +12,12 @@ namespace JiraMobile
 	{
 		public static string strUserName = "";
 		public static string strPassword = "";
-		public Login ()
+		private ILoginManager ilm;
+		public Login (ILoginManager ilm)
 		{
 			InitializeComponent ();
 			processBar.IsVisible = false;
+			this.ilm = ilm;
 		}
 
 		protected void btnLogin_OnClick(object sender, EventArgs e)
@@ -37,7 +40,8 @@ namespace JiraMobile
 			}
 			else
 			{
-				await Navigation.PushAsync (new ProjectList ());
+				//await Navigation.PushAsync (new ProjectList ());
+				ilm.ShowMainPage ();
 			}
 		}
 

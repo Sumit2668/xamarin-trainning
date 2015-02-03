@@ -9,11 +9,12 @@ using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
 using JiraMobile.Pages;
+using JiraMobile.Utils;
 
 namespace JiraMobile.Pages
 {
     [Activity(Label = "JiraMobile", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : FormsApplicationActivity
+	public class MainActivity : FormsApplicationActivity, ILoginManager
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -21,8 +22,22 @@ namespace JiraMobile.Pages
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-			SetPage(App.GetMainPage());
+			SetPage(App.GetLoginPage(this));
         }
+
+		#region ILoginManager implementation
+
+		public void ShowMainPage ()
+		{
+			SetPage(App.GetMainPage());
+		}
+
+		public void Logout ()
+		{
+			SetPage(App.GetMainPage());
+		}
+
+		#endregion
     }
 }
 

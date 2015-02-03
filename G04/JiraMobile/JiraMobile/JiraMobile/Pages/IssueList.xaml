@@ -32,7 +32,7 @@
 								<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
 							</StackLayout>
 							<StackLayout Orientation="Horizontal">
-								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee, Converter={StaticResource avtResourceCvt}}" />
+								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
 								<Label Text="{Binding fields.assignee.displayName}" Font="Bold,Small" />
 								<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand" />
 							</StackLayout>

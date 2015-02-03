@@ -13,7 +13,7 @@
 				<ViewCell>
 					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 						<StackLayout Orientation="Horizontal">
-							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author, Converter={StaticResource avtResourceCvt}}" />
+							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
 							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
 							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
