@@ -16,6 +16,7 @@ namespace JiraMobile
 		public Login (ILoginManager ilm)
 		{
 			InitializeComponent ();
+			imgLogo.Source = ImageSource.FromResource ("JiraMobile.Images.logo.png");
 			processBar.IsVisible = false;
 			this.ilm = ilm;
 		}

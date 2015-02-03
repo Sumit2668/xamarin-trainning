@@ -123,6 +123,7 @@
     <EmbeddedResource Include="Pages\ProjectList.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\IssuesDetail.xaml">

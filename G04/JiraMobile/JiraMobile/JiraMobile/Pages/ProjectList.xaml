@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="Project List" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.ProjectList">
+<ContentPage BackgroundColor="White" Title="Project List" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.ProjectList">
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
 	</ContentPage.Padding>
@@ -10,23 +10,24 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<StackLayout Orientation="Vertical">
-	<ActivityIndicator IsRunning="true" x:Name="processBar" />
-	<ListView x:Name="projectList" RowHeight="{StaticResource rowHeight}" IsVisible="false" ItemTapped="OnItemTapped" ItemsSource="{Binding .}">
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
+		<ActivityIndicator IsRunning="true" x:Name="processBar" />
+		<ListView x:Name="projectList" RowHeight="{StaticResource rowHeight}" IsVisible="false" ItemTapped="OnItemTapped" ItemsSource="{Binding .}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 							<StackLayout Orientation="Horizontal">
 								<Image x:Name="imgAvatar" VerticalOptions="CenterAndExpand" WidthRequest="48" HeightRequest="48" Aspect="AspectFit" Source="{Binding avatarUrls, Converter={StaticResource avtResourceCvt}}" />
 								<StackLayout Orientation="Vertical">
-									<Label Text="{Binding name}" VerticalOptions="CenterAndExpand" />
+									<Label Text="{Binding name}" Font="Large" TextColor="Black" VerticalOptions="CenterAndExpand" />
 									<Label Text="{Binding key}" Font="Medium" TextColor="Accent" />
 								</StackLayout>
 							</StackLayout>
+							<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 						</StackLayout>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
 	</StackLayout>
 </ContentPage>
