@@ -8,6 +8,10 @@
 			<ActivityIndicator IsRunning="true" x:Name="processBar" />
 			<Entry x:Name="txtUserName" Placeholder = "UserName" WidthRequest="5" />
 			<Entry x:Name="txtPass" Placeholder="Password" WidthRequest="5" IsPassword="true" />
+			<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+				<Label Text="Remember me?" Font="Large" TextColor="Gray" XAlign="End" HorizontalOptions="EndAndExpand" />
+				<Switch x:Name="remember" IsToggled="true"  />
+			</StackLayout>
 			<Button BackgroundColor="#003366" x:Name="btnLogin" Text="Login" Clicked="btnLogin_OnClick" />
   		</StackLayout>
 </ContentPage>

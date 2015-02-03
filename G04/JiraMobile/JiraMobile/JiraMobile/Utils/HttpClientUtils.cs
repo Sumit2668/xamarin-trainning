@@ -14,7 +14,7 @@ namespace JiraMobile.Pages
     {
 		private IProcessBarCallBack _IProcessBarCallBack;
 
-		private string authStrBuild = "";
+		public string authStrBuild = "";
 
 		private string baseURL = "https://insight.fsoft.com.vn/jira/";
 
@@ -53,6 +53,12 @@ namespace JiraMobile.Pages
 		{
 			System.Net.HttpStatusCode resultAuthen =  await executeLogin("rest/auth/latest/session");
 			return resultAuthen != System.Net.HttpStatusCode.Unauthorized;
+		}
+
+		public async Task<bool> authenToken(string token)
+		{
+			this.authStrBuild = token;
+			return await authenAccount ();
 		}
 
 		public async Task<T> executeApi<T>(string url)

@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Converter\AvatarProjectConverter.cs" />
     <Compile Include="Utils\ILoginManager.cs" />
+    <Compile Include="Utils\IUserData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

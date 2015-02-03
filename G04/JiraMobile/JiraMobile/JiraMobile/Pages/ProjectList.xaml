@@ -10,6 +10,7 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<StackLayout Orientation="Vertical">
+		<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 		<ActivityIndicator IsRunning="true" x:Name="processBar" />
 		<ListView x:Name="projectList" RowHeight="{StaticResource rowHeight}" IsVisible="false" ItemTapped="OnItemTapped" ItemsSource="{Binding .}">
 			<ListView.ItemTemplate>
@@ -19,7 +20,7 @@
 							<StackLayout Orientation="Horizontal">
 								<Image x:Name="imgAvatar" VerticalOptions="CenterAndExpand" WidthRequest="48" HeightRequest="48" Aspect="AspectFit" Source="{Binding avatarUrls, Converter={StaticResource avtResourceCvt}}" />
 								<StackLayout Orientation="Vertical">
-									<Label Text="{Binding name}" Font="Large" TextColor="Black" VerticalOptions="CenterAndExpand" />
+									<Label Text="{Binding name}" Font="Bold,Large" TextColor="Black" VerticalOptions="CenterAndExpand" />
 									<Label Text="{Binding key}" Font="Medium" TextColor="Accent" />
 								</StackLayout>
 							</StackLayout>

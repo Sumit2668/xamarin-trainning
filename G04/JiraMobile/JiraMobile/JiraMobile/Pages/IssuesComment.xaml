@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesComment">
+<ContentPage BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesComment">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<local:AvatarConverter x:Key="avtResourceCvt" />
@@ -7,22 +7,27 @@
 			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="100" Android="85" WinPhone="85" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<ListView x:Name="listComment" ItemsSource="{Binding fields.comment.comments}" ItemTapped="OnItemTapped">
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
-						<StackLayout Orientation="Horizontal">
-							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
-							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
-							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+	<StackLayout Orientation="Vertical">
+		<StackLayout HeightRequest="1" BackgroundColor="Gray">
+		</StackLayout>
+		<ListView x:Name="listComment" ItemsSource="{Binding fields.comment.comments}" ItemTapped="OnItemTapped">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
+							<StackLayout Orientation="Horizontal">
+								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
+								<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
+								<Label Text="{Binding created, Converter={StaticResource dateCvt}}" TextColor="Black" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal">
+								<Label TextColor="Black" Text="{Binding body}" Font="Medium" />
+							</StackLayout>
+							<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 						</StackLayout>
-						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding body}" Font="Medium" />
-						</StackLayout>
-					</StackLayout>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
 </ContentPage>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesLogWork">
+<ContentPage BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="JiraMobile.Pages.IssuesLogWork">
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
 	</ContentPage.Padding>
@@ -7,27 +7,31 @@
 		<ResourceDictionary>
 			<local:AvatarConverter x:Key="avtResourceCvt" />
 			<local:DateConverter x:Key="dateCvt" />
-			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="75" Android="60" WinPhone="60" />
+			<OnPlatform x:Key="rowHeight" x:TypeArguments="x:Int32" iOS="85" Android="70" WinPhone="70" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<ListView x:Name="listLogWork" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding fields.worklog.worklogs}" ItemTapped="OnItemTapped">
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
-						<StackLayout Orientation="Horizontal">
-							<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />							
-							<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
-							<Label Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+	<StackLayout Orientation="Vertical">
+		<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
+		<ListView x:Name="listLogWork" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding fields.worklog.worklogs}" ItemTapped="OnItemTapped">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
+							<StackLayout Orientation="Horizontal">
+								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding author.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
+								<Label TextColor="Accent" Text="{Binding author.displayName}" Font="Bold,Small" />
+								<Label TextColor="Black" Text="{Binding created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" Padding="5, 5, 0, 5">
+								<Label TextColor="Black" Text="Time : " Font="Medium" />
+								<Label TextColor="Black" Text="{Binding timeSpent}" Font="Medium" />
+								<Label TextColor="Black" Text="{Binding comment}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+							</StackLayout>
+							<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 						</StackLayout>
-						<StackLayout Orientation="Horizontal" Padding="5, 5, 0, 5">
-							<Label Text="Time : " Font="Medium" />
-							<Label Text="{Binding timeSpent}" Font="Medium" />
-							<Label Text="{Binding comment}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
-						</StackLayout>
-					</StackLayout>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
 </ContentPage>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" x:Class="JiraMobile.IssueList" Title="Issues">
+<ContentPage BackgroundColor="White" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:JiraMobile;assembly=JiraMobile" x:Class="JiraMobile.IssueList" Title="Issues">
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,5" Android="5,0,5,5" WinPhone="5,0,5,5" />
 	</ContentPage.Padding>
@@ -17,6 +17,7 @@
 		</ToolbarItem>
 	</ContentPage.ToolbarItems>
 	<StackLayout Orientation="Vertical">
+		<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 		<ActivityIndicator IsRunning="true" x:Name="processBar" Color="Blue" />
 		<ListView x:Name="allIssueList" RowHeight="{StaticResource rowHeight}" ItemsSource="{Binding .}" ItemTapped="OnItemTapped">
 			<ListView.ItemTemplate>
@@ -24,18 +25,19 @@
 					<ViewCell>
 						<StackLayout Orientation="Vertical" Padding="5, 5, 0, 5">
 							<StackLayout Orientation="Horizontal">
-								<Label Text="{Binding key}" Font="Bold,Small" />
+								<Label Text="{Binding key}" TextColor="Black" Font="Bold,Small" />
 								<Image x:Name="imgPriority" VerticalOptions="CenterAndExpand" WidthRequest="15" HeightRequest="15" Aspect="AspectFit" Source="{Binding fields.priority.id, Converter={StaticResource priorityCvt}}" />
-								<Label Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
+								<Label TextColor="Black" Text="{Binding fields.created, Converter={StaticResource dateCvt}}" Font="Small" XAlign="End" HorizontalOptions="EndAndExpand" />
 							</StackLayout>
 							<StackLayout Orientation="Horizontal">
 								<Label Text="{Binding fields.summary}" Font="Medium" TextColor="Accent" />
 							</StackLayout>
 							<StackLayout Orientation="Horizontal">
 								<Image x:Name="imgAvt" WidthRequest="12" HeightRequest="12" Aspect="AspectFit" Source="{Binding fields.assignee.avatarUrls, Converter={StaticResource avtResourceCvt}}" />
-								<Label Text="{Binding fields.assignee.displayName}" Font="Bold,Small" />
+								<Label TextColor="Black" Text="{Binding fields.assignee.displayName}" Font="Bold,Small" />
 								<Image x:Name="status" WidthRequest="64" Source="{Binding fields.status, Converter={StaticResource statusCvt}}" HorizontalOptions="EndAndExpand" />
 							</StackLayout>
+							<StackLayout HeightRequest="1" BackgroundColor="Gray"></StackLayout>
 						</StackLayout>
 					</ViewCell>
 				</DataTemplate>

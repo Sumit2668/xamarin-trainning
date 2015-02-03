@@ -14,7 +14,10 @@ namespace JiraMobile
 
         public static Page GetMainPage()
         {
-			return new NavigationPage (new ProjectList ());
+			return new NavigationPage (new ProjectList ()) {
+				BarBackgroundColor = Color.White,
+				BarTextColor = Color.Black
+			};
         }
 
 		public static Page GetLoginPage(ILoginManager ilm)
