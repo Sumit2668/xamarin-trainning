@@ -27,10 +27,15 @@ namespace JiraMobile.Pages
 //			authStrBuild = "dGhhbmhkYzM6QCNoaXBpQCM0NQ==";
 		}
 
+		public async Task<List<Project>> getAllProjectOfCurrentUser()
+		{
+			var json = await executeApi<List<Project>> ("rest/api/2/project");
+			return json;
+		}
+
 		public async Task<RootIssueDetail> getIssuesById(string id)
 		{
 			var json = await executeApi<RootIssueDetail> ("rest/api/2/issue/"+id+"?fields=id,key,assignee,status,resolution,summary,description,comment,priority,worklog,creator,reporter,project,issuetype,updated");
-			System.Diagnostics.Debug.WriteLine ("aaa" + id);
 			return json;
 		}
 

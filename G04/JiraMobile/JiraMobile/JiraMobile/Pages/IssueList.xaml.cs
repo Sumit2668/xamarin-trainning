@@ -11,22 +11,21 @@ namespace JiraMobile
 	{
 		HttpClientUtils client;
 
+		private String projectID;
+
 		private static List<Issue> issueList;
 
-		public IssueList ()
+		public IssueList (string projectID)
 		{
+			this.projectID = projectID;
 
 			InitializeComponent ();
 
 			client = new HttpClientUtils (this);
 
-			GetIssueByProject ("F11B13KFA");
+			GetIssueByProject (projectID);
 
 			tblMore.Activated += OnToolbarClick;
-
-			//ToolbarItem item = new ToolbarItem();
-
-
 		}
 
 		async void GetIssueByProject(string projectID){
@@ -38,7 +37,7 @@ namespace JiraMobile
 
 		void OnToolbarClick(object sender, EventArgs e)
 		{
-			GetIssueByProject ("F11B13KFA");
+			GetIssueByProject (projectID);
 		}
 
 		void OnButtonClicked(object sender, EventArgs args)

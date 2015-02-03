@@ -37,7 +37,7 @@ namespace JiraMobile
 			}
 			else
 			{
-				await Navigation.PushAsync (new IssueList ());
+				await Navigation.PushAsync (new ProjectList ());
 			}
 		}
 
