@@ -3,9 +3,9 @@ using JiraMobile.Utils;
 using Xamarin.Forms;
 using SQLite;
 
+[assembly: Dependency (typeof(JiraMobile.Droid.UserData))]
 namespace JiraMobile.Droid
 {
-	[assembly: Dependency (typeof(UserData))]
 	public class UserData : IUserData
 	{
 		public UserData ()

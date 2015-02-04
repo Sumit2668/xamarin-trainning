@@ -20,11 +20,14 @@ namespace JiraMobile
 			imgLogo.Source = ImageSource.FromResource ("JiraMobile.Images.logo.png");
 			processBar.IsVisible = false;
 			this.ilm = ilm;
-			IUserData userData = DependencyService.Get<IUserData> ();
-			string token = userData.getAuth ();
-			if (string.IsNullOrEmpty (token)) {
+			try {
+				IUserData userData = DependencyService.Get<IUserData> ();
+				string token = userData.getAuth ();
+				if (!string.IsNullOrEmpty (token)) {
 
-				AuthencationToken (token);
+					AuthencationToken (token);
+				}
+			} catch {
 			}
 		}
 
