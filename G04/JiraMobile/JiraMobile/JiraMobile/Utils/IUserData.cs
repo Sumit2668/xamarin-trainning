@@ -4,7 +4,8 @@ namespace JiraMobile.Utils
 {
 	public interface IUserData
 	{
-		string getDbPath();
+		void saveAuth(String token);
+		string getAuth();
 	}
 }
 
