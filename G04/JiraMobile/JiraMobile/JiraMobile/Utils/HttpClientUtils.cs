@@ -57,7 +57,7 @@ namespace JiraMobile.Pages
 
 		public async Task<bool> authenToken(string token)
 		{
-			this.authStrBuild = token;
+			this.authStrBuild = System.Convert.ToBase64String (Encoding.UTF8.GetBytes(token));
 			return await authenAccount ();
 		}
 
@@ -66,10 +66,10 @@ namespace JiraMobile.Pages
 			// display processbar
 			this._IProcessBarCallBack.Show ();
 
-			if (String.IsNullOrEmpty(Login.strUserName) || String.IsNullOrEmpty(Login.strPassword)) {
-
-				return default(T);
-			}
+//			if (String( String.IsNullOrEmpty(Login.strUserName) || String.IsNullOrEmpty(Login.strPassword))) {
+//
+//				return default(T);
+//			}
 
 			var request = new HttpRequestMessage () {
 

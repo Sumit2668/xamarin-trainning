@@ -44,7 +44,10 @@ namespace JiraMobile
 			HttpClientUtils client = new HttpClientUtils (this);
 			var result = await client.authenToken (token);
 			if (result) {
-
+			
+				string[] values = token.Split (':');
+				Login.strUserName = values[0];
+				Login.strPassword = values[1];
 				ilm.ShowMainPage ();
 			}
 		}
@@ -63,7 +66,7 @@ namespace JiraMobile
 				if (remember.IsToggled) {
 
 					IUserData userData = DependencyService.Get<IUserData> ();
-					userData.saveAuth (client.authStrBuild);
+					userData.saveAuth (strUserName + ":" + strPassword);
 				}
 
 				//await Navigation.PushAsync (new ProjectList ());
@@ -77,11 +80,13 @@ namespace JiraMobile
 			txtUserName.IsVisible = false;
 			txtPass.IsVisible = false;
 			btnLogin.IsVisible = false;
+			layoutRemember.IsVisible = false;
 		}
 
 		public void Hide ()
 		{
 			processBar.IsVisible = false;
+			layoutRemember.IsVisible = true;
 		}
 	}
 
