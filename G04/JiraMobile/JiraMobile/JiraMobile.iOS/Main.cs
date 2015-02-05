@@ -4,10 +4,11 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using JiraMobile.Utils;
 
 namespace JiraMobile.Pages
 {
-    public class Application
+	public class Application
     {
         // This is the main entry point of the application.
         static void Main(string[] args)
@@ -16,5 +17,6 @@ namespace JiraMobile.Pages
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");
         }
+			
     }
 }
