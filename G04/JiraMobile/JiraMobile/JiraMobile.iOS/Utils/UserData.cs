@@ -72,9 +72,5 @@ namespace JiraMobile.Droid
 
 	}
 
-	public class UserLogin
-	{
-		public string Token { get; set; }
-	}
 }
 

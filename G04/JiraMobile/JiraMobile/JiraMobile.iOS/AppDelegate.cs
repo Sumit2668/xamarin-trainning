@@ -21,18 +21,12 @@ namespace JiraMobile.Pages
 		// class-level declarations
 		UIWindow window;
 
-		private bool isLoginSuccess = false;
-
 		#region ILoginManager implementation
 
 		public void ShowMainPage ()
 		{
-			isLoginSuccess = true;
-			//UINavigationController nav = (UINavigationController)window.RootViewController;
-
-			//nav.PushViewController(App.GetMainPage ().CreateViewController(), true);
-
-			//(UINavigationController )window.RootViewController = App.GetMainPage ().CreateViewController ();
+			window.RootViewController = App.GetMainPage ().CreateViewController ();
+			window.MakeKeyAndVisible ();
 
 		}
 
@@ -58,14 +52,7 @@ namespace JiraMobile.Pages
 
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-			UIViewController ui = App.GetLoginPage (this).CreateViewController();
-
-			if (isLoginSuccess) {
-				window.RootViewController = App.GetMainPage ().CreateViewController ();
-			} else {
-				window.RootViewController = ui;
-			}
-
+			window.RootViewController = App.GetLoginPage (this).CreateViewController();
 
 			window.MakeKeyAndVisible ();
 
